@@ -20,7 +20,25 @@ html{
     margin-bottom:25px;
     color:#cbd5e1;
 }
-.navbar{
+.language-switcher{
+    display:flex;
+    gap:8px;
+    margin-left:25px;
+}
+
+.language-switcher button{
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-weight:600;
+    color:#1f2937;
+}
+
+.language-switcher button:hover{
+    color:#2563eb;
+}
+    
+    .navbar{
     position:sticky;
     top:0;
     background:white;
@@ -395,12 +413,83 @@ footer{
 </style>
 
 </head>
+<script>
+const translations = {
 
+    en: {
+
+        "about-title":"About ACLIS",
+
+        "about-text":
+        "ACLIS is an independent engineering and advisory practice supporting energy infrastructure, renewable energy, battery storage and sustainable mobility projects.",
+
+        "services-btn":"Our Services",
+
+        "contact-btn":"Contact Us"
+
+    },
+
+    ro: {
+
+        "about-title":"Despre ACLIS",
+
+        "about-text":
+        "ACLIS este o companie independentă de inginerie și consultanță care sprijină proiecte de infrastructură energetică, energie regenerabilă, stocare a energiei și mobilitate sustenabilă.",
+
+        "services-btn":"Serviciile Noastre",
+
+        "contact-btn":"Contact"
+
+    }
+};
+
+function setLanguage(lang){
+
+    document.querySelectorAll("[data-lang]").forEach(element => {
+
+        const key = element.getAttribute("data-lang");
+
+        if(translations[lang][key]){
+            element.innerHTML = translations[lang][key];
+        }
+
+    });
+
+    localStorage.setItem("language",lang);
+}
+
+window.onload = () => {
+
+    const savedLanguage =
+        localStorage.getItem("language") || "en";
+
+    setLanguage(savedLanguage);
+}
+
+en:{
+    "company-name":"Advanced Collaborative Integrated Solutions",
+    "tagline":"Independent Engineering & Advisory",
+    "sectors":"Power Systems • Renewable Energy • Energy Storage • E-Mobility"
+},
+
+ro:{
+    "company-name":"Soluții Integrate Colaborative Avansate",
+    "tagline":"Inginerie și Consultanță Independentă",
+    "sectors":"Sisteme Electroenergetice • Energie Regenerabilă • Stocare Energie • Mobilitate Electrică"
+}
+
+    
+</script>
 <body>
 <nav class="navbar">
 
 <div class="nav-container">
-
+    
+<div class="language-switcher">
+    <button onclick="setLanguage('en')">EN</button>
+    <button onclick="setLanguage('ro')">RO</button>
+</div>
+    
 <div class="logo">
     <img src="logo-aclis.png" alt="ACLIS Logo">
 </div>
@@ -417,16 +506,16 @@ footer{
 </nav>
 <header>
 
-<h1>
+<h1 data-lang="company-name">
 Advanced Collaborative<br>
 Integrated Solutions
 </h1>
 
-<p class="subtitle">
+<p class="subtitle" data-lang="tagline">
 Independent Engineering & Advisory
 </p>
 
-<p>
+<p data-lang="sectors">
 Power Systems • Renewable Energy • BESS • E-Mobility
 </p>
 
@@ -435,23 +524,23 @@ Power Systems • Renewable Energy • BESS • E-Mobility
 
 <br><br>
 
-<a href="#services" class="button">Our Services</a>
+<a href="#services" class="button" data-lang="services-btn">Our Services</a>
 
-<a href="#contact" class="button-secondary">Contact Us</a>
+<a href="#contact" class="button-secondary" data-lang="contact-btn">Contact Us</a>
 
 </header>
 
 <section id="about">
 
-<h2>About ACLIS</h2>
+<h2 data-lang="about-title">About ACLIS</h2>
 
-<p>
+<p data-lang="about-text">
 ACLIS is an independent engineering and advisory practice supporting energy infrastructure, renewable energy, battery storage and sustainable mobility projects.
 </p>
 
 <br>
 
-<p>
+<p data-lang="about-text">
 We provide technical expertise, engineering support and strategic advisory services to developers, investors, EPC contractors, utilities and asset owners throughout the project lifecycle.
 </p>
 
