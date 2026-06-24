@@ -417,29 +417,39 @@ footer{
 const translations = {
 
     en: {
+        "company-name":"Advanced Collaborative Integrated Solutions",
+        "tagline":"Independent Engineering & Advisory",
+        "sectors":"Power Systems • Renewable Energy • BESS • E-Mobility",
 
         "about-title":"About ACLIS",
-
-        "about-text":
-        "ACLIS is an independent engineering and advisory practice supporting energy infrastructure, renewable energy, battery storage and sustainable mobility projects.",
+        "about-text-1":"ACLIS is an independent engineering and advisory practice supporting energy infrastructure, renewable energy, battery storage and sustainable mobility projects.",
+        "about-text-2":"We provide technical expertise, engineering support and strategic advisory services to developers, investors, EPC contractors, utilities and asset owners throughout the project lifecycle.",
 
         "services-btn":"Our Services",
+        "contact-btn":"Contact Us",
 
-        "contact-btn":"Contact Us"
-
+        "services-title":"Services",
+        "why-title":"Why ACLIS",
+        "experience-title":"Relevant Experience",
+        "contact-title":"Contact"
     },
 
     ro: {
+        "company-name":"Soluții Integrate Colaborative Avansate",
+        "tagline":"Inginerie și Consultanță Independentă",
+        "sectors":"Sisteme Electroenergetice • Energie Regenerabilă • BESS • Mobilitate Electrică",
 
         "about-title":"Despre ACLIS",
-
-        "about-text":
-        "ACLIS este o companie independentă de inginerie și consultanță care sprijină proiecte de infrastructură energetică, energie regenerabilă, stocare a energiei și mobilitate sustenabilă.",
+        "about-text-1":"ACLIS este o companie independentă de inginerie și consultanță care sprijină proiecte de infrastructură energetică, energie regenerabilă, stocare a energiei și mobilitate sustenabilă.",
+        "about-text-2":"Oferim expertiză tehnică, suport de inginerie și servicii de consultanță strategică pentru dezvoltatori, investitori, contractori EPC, operatori de rețea și proprietari de active pe întreg ciclul de viață al proiectelor.",
 
         "services-btn":"Serviciile Noastre",
+        "contact-btn":"Contact",
 
-        "contact-btn":"Contact"
-
+        "services-title":"Servicii",
+        "why-title":"De ce ACLIS",
+        "experience-title":"Experiență Relevantă",
+        "contact-title":"Contact"
     }
 };
 
@@ -449,37 +459,22 @@ function setLanguage(lang){
 
         const key = element.getAttribute("data-lang");
 
-        if(translations[lang][key]){
+        if(translations[lang] && translations[lang][key]){
             element.innerHTML = translations[lang][key];
         }
 
     });
 
-    localStorage.setItem("language",lang);
+    localStorage.setItem("language", lang);
 }
 
-window.onload = () => {
-
-    const savedLanguage =
-        localStorage.getItem("language") || "en";
-
+window.onload = function(){
+    const savedLanguage = localStorage.getItem("language") || "en";
     setLanguage(savedLanguage);
-}
-
-en:{
-    "company-name":"Advanced Collaborative Integrated Solutions",
-    "tagline":"Independent Engineering & Advisory",
-    "sectors":"Power Systems • Renewable Energy • Energy Storage • E-Mobility"
-},
-
-ro:{
-    "company-name":"Soluții Integrate Colaborative Avansate",
-    "tagline":"Inginerie și Consultanță Independentă",
-    "sectors":"Sisteme Electroenergetice • Energie Regenerabilă • Stocare Energie • Mobilitate Electrică"
-}
+};
+</script>
 
     
-</script>
 <body>
 <nav class="navbar">
 
@@ -506,10 +501,10 @@ ro:{
 </nav>
 <header>
 
-<h1 data-lang="company-name">
+<p class="subtitle" data-lang="company-name">
 Advanced Collaborative<br>
 Integrated Solutions
-</h1>
+</p>
 
 <p class="subtitle" data-lang="tagline">
 Independent Engineering & Advisory
@@ -534,13 +529,11 @@ Power Systems • Renewable Energy • BESS • E-Mobility
 
 <h2 data-lang="about-title">About ACLIS</h2>
 
-<p data-lang="about-text">
+<p data-lang="about-text-1">
 ACLIS is an independent engineering and advisory practice supporting energy infrastructure, renewable energy, battery storage and sustainable mobility projects.
 </p>
 
-<br>
-
-<p data-lang="about-text">
+<p data-lang="about-text-2">
 We provide technical expertise, engineering support and strategic advisory services to developers, investors, EPC contractors, utilities and asset owners throughout the project lifecycle.
 </p>
 
