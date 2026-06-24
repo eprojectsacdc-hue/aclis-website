@@ -199,10 +199,53 @@ margin-bottom:25px;
 color:#0f172a;
 }
 
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
+.experience-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+    gap:30px;
+}
+
+.exp-card{
+    display:flex;
+    gap:25px;
+    align-items:flex-start;
+
+    background:#fff;
+    border-radius:18px;
+    padding:30px;
+
+    border:1px solid #e5e7eb;
+
+    transition:.3s;
+}
+
+.exp-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.exp-icon{
+    min-width:70px;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:#eef4ff;
+    font-size:34px;
+}
+
+.exp-content h3{
+    color:#07152f;
+    margin-bottom:12px;
+}
+
+.exp-content p{
+    color:#4b5563;
+    line-height:1.7;
 }
 
 .card{
@@ -217,16 +260,40 @@ color:#2563eb;
 margin-bottom:10px;
 }
 
-.why{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:50px;
 }
 
 .why-card{
-padding:25px;
-border:1px solid #e5e7eb;
-border-radius:10px;
+    background:#ffffff;
+    padding:40px 30px;
+    border-radius:16px;
+    text-align:center;
+    border:1px solid #e5e7eb;
+    transition:all .3s ease;
+}
+
+.why-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.why-icon{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.why-card h3{
+    margin-bottom:15px;
+    color:#07152f;
+}
+
+.why-card p{
+    color:#4b5563;
+    line-height:1.7;
 }
 
 footer{
@@ -388,72 +455,121 @@ We provide technical expertise, engineering support and strategic advisory servi
 
 </section>
 
-<section>
 
-<h2>Why ACLIS</h2>
+<section id="why-aclis" class="section">
 
-<div class="why">
+    <h2>Why ACLIS</h2>
 
-<div class="why-card">
-<h3>Independent Perspective</h3>
-<p>Objective technical advice focused on project success.</p>
-</div>
+    <div class="why-grid">
 
-<div class="why-card">
-<h3>Engineering Expertise</h3>
-<p>Experience across power systems and renewable energy projects.</p>
-</div>
+        <div class="why-card">
+            <div class="why-icon">⚖️</div>
+            <h3>Independent Perspective</h3>
+            <p>Objective technical advice focused on project success.</p>
+        </div>
 
-<div class="why-card">
-<h3>Integrated Solutions</h3>
-<p>Engineering, advisory and development support under one framework.</p>
-</div>
+        <div class="why-card">
+            <div class="why-icon">⚙️</div>
+            <h3>Engineering Expertise</h3>
+            <p>Experience across power systems and renewable energy projects.</p>
+        </div>
 
-<div class="why-card">
-<h3>Flexible Collaboration</h3>
-<p>Tailored support adapted to project needs.</p>
-</div>
+        <div class="why-card">
+            <div class="why-icon">🧩</div>
+            <h3>Integrated Solutions</h3>
+            <p>Engineering, advisory and development support under one framework.</p>
+        </div>
 
-</div>
-<section>
+        <div class="why-card">
+            <div class="why-icon">🤝</div>
+            <h3>Flexible Collaboration</h3>
+            <p>Tailored support adapted to project needs.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="experience" class="section">
 
 <h2>Selected Experience</h2>
 
-<div class="services">
+<div class="experience-grid">
 
-<div class="card">
-<h3>Hydropower Rehabilitation</h3>
-<p>Engineering support and technical documentation for hydropower modernization projects.</p>
+    <div class="exp-card">
+        <div class="exp-icon">💧</div>
+
+        <div class="exp-content">
+            <h3>Hydropower Rehabilitation</h3>
+            <p>
+                Engineering support and technical documentation
+                for hydropower modernization projects.
+            </p>
+        </div>
+    </div>
+
+    <div class="exp-card">
+        <div class="exp-icon">⚡</div>
+
+        <div class="exp-content">
+            <h3>Grid Connection Projects</h3>
+            <p>
+                Connection studies, technical assessments
+                and support during permitting and grid integration.
+            </p>
+        </div>
+    </div>
+
+    <div class="exp-card">
+        <div class="exp-icon">☀️</div>
+
+        <div class="exp-content">
+            <h3>Renewable Energy</h3>
+            <p>
+                Technical advisory services for utility-scale
+                PV, wind and hybrid energy developments.
+            </p>
+        </div>
+    </div>
+
+    <div class="exp-card">
+        <div class="exp-icon">🔋</div>
+
+        <div class="exp-content">
+            <h3>Battery Storage Systems</h3>
+            <p>
+                Feasibility assessments, technology evaluation
+                and grid integration support.
+            </p>
+        </div>
+    </div>
+
+    <div class="exp-card">
+        <div class="exp-icon">🏭</div>
+
+        <div class="exp-content">
+            <h3>Electrical Infrastructure</h3>
+            <p>
+                Substations, power system studies and
+                electrical design support.
+            </p>
+        </div>
+    </div>
+
+    <div class="exp-card">
+        <div class="exp-icon">🚗</div>
+
+        <div class="exp-content">
+            <h3>E-Mobility Infrastructure</h3>
+            <p>
+                Planning, design and implementation support
+                for EV charging networks.
+            </p>
+        </div>
+    </div>
+
 </div>
 
-<div class="card">
-<h3>Grid Connection Projects</h3>
-<p>Connection studies, technical assessments and support during permitting and grid integration.</p>
-</div>
-
-<div class="card">
-<h3>Renewable Energy</h3>
-<p>Technical advisory services for utility-scale PV, wind and hybrid energy developments.</p>
-</div>
-
-<div class="card">
-<h3>Battery Storage Systems</h3>
-<p>Feasibility assessments, technology evaluation and grid integration support.</p>
-</div>
-
-<div class="card">
-<h3>Electrical Infrastructure</h3>
-<p>Substations, power systems studies and electrical design support.</p>
-</div>
-
-<div class="card">
-<h3>E-Mobility Infrastructure</h3>
-<p>Planning, design and implementation support for EV charging networks.</p>
-</div>
-
-</div>
-
-</section>
 </section>
 
 <section class="alt" id="expertise">
