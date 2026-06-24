@@ -106,10 +106,47 @@ border-radius:10px;
 }
 
 footer{
-background:#0f172a;
-color:white;
-text-align:center;
-padding:40px;
+.button{
+    display:inline-block;
+    margin:10px;
+    padding:14px 28px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.button:hover{
+    opacity:0.9;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    padding:50px 20px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    text-align:left;
+}
+
+.footer-title{
+    font-size:1.3rem;
+    margin-bottom:10px;
+}
+
+.footer-subtitle{
+    margin-bottom:10px;
+    color:#cbd5e1;
+}
+
+.footer-copy{
+    margin-top:20px;
+    font-size:0.9rem;
+    color:#94a3b8;
 }
 
 </style>
@@ -273,13 +310,25 @@ We provide technical expertise, engineering support and strategic advisory servi
 
 <footer>
 
-<h3>ACLIS</h3>
+<div class="footer-container">
 
-<p>Advanced Collaborative Integrated Solutions</p>
+<div class="footer-title">
+ACLIS
+</div>
 
-<p>Power Systems • Renewable Energy • BESS • E-Mobility</p>
+<div class="footer-subtitle">
+Advanced Collaborative Integrated Solutions
+</div>
 
-<p>© 2026 ACLIS. All rights reserved.</p>
+<div>
+Power Systems • Renewable Energy • BESS • E-Mobility
+</div>
+
+<div class="footer-copy">
+© 2026 ACLIS. All rights reserved.
+</div>
+
+</div>
 
 </footer>
 
