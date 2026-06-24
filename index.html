@@ -45,16 +45,18 @@ html{
     color:#0f172a;
 }
 
-.logo-box{
-    width:38px;
-    height:38px;
+.logo{
     display:flex;
     align-items:center;
-    justify-content:center;
-    background:#0f172a;
-    color:white;
-    border-radius:8px;
-    font-weight:bold;
+    gap:12px;
+    font-size:1.6rem;
+    font-weight:700;
+    color:#0f172a;
+}
+
+.logo img{
+    height:42px;
+    width:auto;
 }
 .nav-links a{
     margin-left:25px;
@@ -281,6 +283,13 @@ footer{
     color:#94a3b8;
 }
 
+.tagline{
+    font-size:1.2rem;
+    margin-top:15px;
+    font-weight:500;
+    color:#cbd5e1;
+} 
+    
 </style>
 
 </head>
@@ -291,8 +300,11 @@ footer{
 <div class="nav-container">
 
 <div class="logo">
-<span class="logo-box">A</span>
-ACLIS
+
+<img src="logo-aclis.png" alt="ACLIS Logo">
+
+<span>ACLIS</span>
+
 </div>
 
 <div class="nav-links">
@@ -307,18 +319,13 @@ ACLIS
 </nav>
 <header>
 
-<h1>ACLIS</h1>
+<h1>
+Advanced Collaborative Integrated Solutions
+</h1>
 
-<h2>Advanced Collaborative Integrated Solutions</h2>
-
-<p>
+<p class="tagline">
 Power Systems • Renewable Energy • BESS • E-Mobility
-</p>
-
-<br>
-
-<p>
-Independent engineering, advisory and project development support for energy infrastructure, renewable energy and sustainable mobility projects.
+    
 </p>
 
 <br><br>
@@ -474,10 +481,12 @@ Download Company Profile
 
 <div class="footer-column">
 
+
+
 <h3>ACLIS</h3>
 
 <p>
-Advanced Collaborative Integrated Solutions
+Independent Engineering & Advisory
 </p>
 
 <p>
