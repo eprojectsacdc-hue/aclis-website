@@ -7,7 +7,7 @@
 
 <title>ACLIS | Advanced Collaborative Integrated Solutions</title>
     
-
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
     
 <style>
 html{
@@ -25,39 +25,22 @@ html{
 .nav-container{
     max-width:1200px;
     margin:auto;
-    padding:18px 20px;
+    padding:12px 30px;
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
 .logo{
-    font-size:1.5rem;
-    font-weight:bold;
-    color:#0f172a;
-}
-.logo{
     display:flex;
     align-items:center;
-    gap:12px;
-    font-size:1.5rem;
-    font-weight:bold;
-    color:#0f172a;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-size:1.6rem;
-    font-weight:700;
-    color:#0f172a;
 }
 
 .logo img{
-    height:42px;
+    height:90px;
     width:auto;
 }
+
 .nav-links a{
     margin-left:25px;
     text-decoration:none;
@@ -159,7 +142,7 @@ background:#ffffff;
 header{
 background:#0f172a;
 color:white;
-padding:120px 20px;
+padding:80px 20px;
 text-align:center;
 }
 
@@ -203,7 +186,19 @@ padding:80px 20px;
 .alt{
 background:#f8fafc;
 }
+.alt{
+    background:#f8fafc;
+    color:#1f2937;
+}
 
+.alt ul{
+    color:#1f2937;
+}
+
+.alt li{
+    color:#1f2937;
+    margin-bottom:12px;
+}
 h2{
 margin-bottom:25px;
 color:#0f172a;
@@ -220,13 +215,27 @@ background:white;
 padding:25px;
 border-radius:10px;
 border:1px solid #e5e7eb;
+min-height:180px;
+}
+.card p{
+margin-top:12px;
+color:#4b5563;
+}
+   .card{
+transition:all .25s ease;
 }
 
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+} 
+    
 .card h3{
 color:#2563eb;
 margin-bottom:10px;
 }
 
+    
 .why{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -240,46 +249,33 @@ border-radius:10px;
 }
 
 footer{
-.button{
-    display:inline-block;
-    margin:10px;
-    padding:14px 28px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-}
-
-.button:hover{
-    opacity:0.9;
-}
-
-footer{
     background:#0f172a;
     color:white;
-    padding:50px 20px;
+    padding:60px 20px;
 }
 
 .footer-container{
     max-width:1200px;
     margin:auto;
-    text-align:left;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
 }
 
-.footer-title{
-    font-size:1.3rem;
-    margin-bottom:10px;
+.footer-column h3{
+    margin-bottom:15px;
 }
 
-.footer-subtitle{
-    margin-bottom:10px;
+.footer-column p{
     color:#cbd5e1;
+    margin-bottom:8px;
 }
 
-.footer-copy{
-    margin-top:20px;
-    font-size:0.9rem;
+.footer-bottom{
+    max-width:1200px;
+    margin:40px auto 0;
+    padding-top:20px;
+    border-top:1px solid #334155;
     color:#94a3b8;
 }
 
@@ -289,57 +285,59 @@ footer{
     font-weight:500;
     color:#cbd5e1;
 } 
-    
+.expertise-list{
+    max-width:500px;
+    margin:30px auto 0;
+    text-align:left;
+}    
 </style>
 
 </head>
 
 <body>
 <nav class="navbar">
-    
-   
+
 <div class="nav-container">
-    
-<img src="logo-aclis.png" alt="ACLIS Logo">
 
 <div class="logo">
-
-<img src="logo-aclis.png" alt="ACLIS Logo">
-
-<span>ACLIS</span>
-
+    <img src="logo-aclis.png" alt="ACLIS Logo">
 </div>
 
 <div class="nav-links">
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#expertise">Expertise</a>
-<a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#contact">Contact</a>
 </div>
 
 </div>
 
 </nav>
+    
 <header>
 
-<h1>
-Advanced Collaborative Integrated Solutions
-</h1>
+<header>
+
+<h1>ACLIS</h1>
 
 <p class="tagline">
+Advanced Collaborative Integrated Solutions
+</p>
+
+<br>
+
+<p>
 Power Systems • Renewable Energy • BESS • E-Mobility
-    
 </p>
 
 <br>
 
 <a href="#services" class="button">Our Services</a>
-
 <a href="#contact" class="button-secondary">Contact Us</a>
 
 </header>
 
-<section>
+<section id="about">
 
 <h2>About ACLIS</h2>
 
@@ -435,11 +433,11 @@ We provide technical expertise, engineering support and strategic advisory servi
 
 </section>
 
-<section class="alt">
+<section class="alt" id="expertise">
 
 <h2>Areas of Expertise</h2>
 
-<ul>
+<ul class="expertise-list">
 <li>Grid Connection Studies</li>
 <li>Power System Engineering</li>
 <li>Renewable Energy Projects</li>
@@ -476,7 +474,6 @@ Download Company Profile
 
 </section>
 
-</section>
 
 <footer>
 
