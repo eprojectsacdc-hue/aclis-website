@@ -1,767 +1,966 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ACLIS | Advanced Collaborative Integrated Solutions</title>
-
-    
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
-<style>
-html{
-    scroll-behavior:smooth;
-}
-.subtitle{
-    font-size:1.4rem;
-    font-weight:300;
-    margin-bottom:25px;
-    color:#cbd5e1;
-}
-.language-switcher{
-    display:flex;
-    gap:8px;
-    margin-left:25px;
-}
-
-.language-switcher button{
-    border:none;
-    background:none;
-    cursor:pointer;
-    font-weight:600;
-    color:#1f2937;
-}
-
-.language-switcher button:hover{
-    color:#2563eb;
-}
-    
-    .navbar{
-    position:sticky;
-    top:0;
-    background:white;
-    border-bottom:1px solid #e5e7eb;
-    z-index:1000;
-}
-
-.nav-container{
-    max-width:1200px;
-    margin:auto;
-    padding:10px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-}
-.logo img{
-    height:130px;
-    width:auto;
-    display:block;
-}
-    
-.nav-links a{
-    margin-left:25px;
-    text-decoration:none;
-    color:#1f2937;
-    font-weight:500;
-}
-
-.nav-links a:hover{
-    color:#2563eb;
-}
-
-.button{
-    display:inline-block;
-    margin:10px;
-    padding:14px 28px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-}
-
-.button-secondary{
-    display:inline-block;
-    margin:10px;
-    padding:14px 28px;
-    border:1px solid white;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-}
-
-.button:hover,
-.button-secondary:hover{
-    opacity:0.9;
-}
-
-footer{
-    background:#0f172a;
-    color:white;
-    padding:60px 20px;
-}
-
-.footer-container{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:40px;
-}
-
-.footer-column h3{
-    margin-bottom:15px;
-}
-
-.footer-column p{
-    color:#cbd5e1;
-    margin-bottom:8px;
-}
-
-.footer-bottom{
-    max-width:1200px;
-    margin:40px auto 0;
-    padding-top:20px;
-    border-top:1px solid #334155;
-    color:#94a3b8;
-}
-
-@media(max-width:768px){
-
-.nav-container{
-    flex-direction:column;
-    gap:15px;
-}
-
-.nav-links a{
-    margin:0 10px;
-}
-
-header h1{
-    font-size:2.8rem;
-}
-
-}
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:Arial, Helvetica, sans-serif;
-color:#1f2937;
-line-height:1.7;
-background:#ffffff;
-}
-
-header{
-    background:#0f172a;
-    color:white;
-    padding:80px 20px;
-    text-align:center;
-}
-
-header h1{
-    font-size:4rem;
-    margin-bottom:20px;
-    line-height:1.15;
-}
-
-header h2{
-font-weight:300;
-margin-bottom:20px;
-}
-
-header p{
-max-width:900px;
-margin:auto;
-font-size:1.1rem;
-}
-
-.button{
-display:inline-block;
-margin:10px;
-padding:14px 28px;
-background:#2563eb;
-color:white;
-text-decoration:none;
-border-radius:8px;
-font-weight:bold;
-}
-
-.button:hover{
-opacity:0.9;
-}
-
-section{
-max-width:1200px;
-margin:auto;
-padding:80px 20px;
-}
-
-.alt{
-background:#f8fafc;
-}
-
-h2{
-margin-bottom:25px;
-color:#0f172a;
-}
-
-.experience-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
-    gap:30px;
-}
-
-.exp-card{
-    display:flex;
-    gap:25px;
-    align-items:flex-start;
-
-    background:#fff;
-    border-radius:18px;
-    padding:30px;
-
-    border:1px solid #e5e7eb;
-
-    transition:.3s;
-}
-
-.exp-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-}
-
-.exp-icon{
-    min-width:70px;
-    height:70px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:14px;
-
-    background:#eef4ff;
-    font-size:34px;
-}
-
-.exp-content h3{
-    color:#07152f;
-    margin-bottom:12px;
-}
-
-.exp-content p{
-    color:#4b5563;
-    line-height:1.7;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:10px;
-border:1px solid #e5e7eb;
-}
-
-.card h3{
-color:#2563eb;
-margin-bottom:10px;
-}
-
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-    margin-top:50px;
-}
-.services{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-}
-
-.services .card{
-    padding:14px 22px;
-    border-radius:50px;
-    background:white;
-    border:1px solid #e5e7eb;
-    flex:none;
-    transition:.3s;
-}
-
-.services .card:hover{
-    background:#2563eb;
-    transform:translateY(-3px);
-}
-
-.services .card:hover h3{
-    color:white;
-}
-
-.services .card h3{
-    margin:0;
-    font-size:1rem;
-    color:#2563eb;
-}
-.why-card{
-    background:#ffffff;
-    padding:40px 30px;
-    border-radius:16px;
-    text-align:center;
-    border:1px solid #e5e7eb;
-    transition:all .3s ease;
-}
-
-.why-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-}
-
-.why-icon{
-    font-size:42px;
-    margin-bottom:20px;
-}
-
-.why-card h3{
-    margin-bottom:15px;
-    color:#07152f;
-}
-
-.why-card p{
-    color:#4b5563;
-    line-height:1.7;
-}
-
-footer{
-.button{
-    display:inline-block;
-    margin:10px;
-    padding:14px 28px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-}
-
-.button:hover{
-    opacity:0.9;
-}
-
-footer{
-    background:#0f172a;
-    color:white;
-    padding:50px 20px;
-}
-
-.footer-container{
-    max-width:1200px;
-    margin:auto;
-    text-align:left;
-}
-
-.footer-title{
-    font-size:1.3rem;
-    margin-bottom:10px;
-}
-
-.footer-subtitle{
-    margin-bottom:10px;
-    color:#cbd5e1;
-}
-
-.footer-copy{
-    margin-top:20px;
-    font-size:0.9rem;
-    color:#94a3b8;
-}
-#why-aclis{
-    background:#0f172a;
-    color:white;
-    max-width:none;
-    padding:100px 8%;
-}
-
-#why-aclis h2{
-    color:white;
-    text-align:center;
-    margin-bottom:60px;
-}
-
-#why-aclis .why-card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
-}
-
-#why-aclis .why-card h3{
-    color:white;
-}
-
-#why-aclis .why-card p{
-    color:#cbd5e1;
-}
-</style>
-
-</head>
-<script>
-const translations = {
-
-    en: {
-        "company-name":"ACLIS – Advanced Collaborative Integrated Solutions",
-        "tagline":"Independent Engineering & Advisory",
-        "sectors":"Power Systems • Renewable Energy • BESS • E-Mobility",
-
-        "about-title":"About ACLIS",
-        "about-text-1":"ACLIS is an independent engineering and advisory practice supporting energy infrastructure, renewable energy, battery storage and sustainable mobility projects.",
-        "about-text-2":"We provide technical expertise, engineering support and strategic advisory services to developers, investors, EPC contractors, utilities and asset owners throughout the project lifecycle.",
-
-        "services-btn":"Our Services",
-        "contact-btn":"Contact Us",
-
-        "services-title":"Services",
-        "why-title":"Why ACLIS",
-        "experience-title":"Relevant Experience",
-        "contact-title":"Contact"
-    },
-
-    ro: {
-        "company-name":"ACLIS – Soluții Integrate prin Colaborare Avansată",
-        "tagline":"Inginerie și Consultanță Independentă",
-        "sectors":"Sisteme Electroenergetice • Energie Regenerabilă • BESS • Mobilitate Electrică",
-
-        "about-title":"Despre ACLIS",
-        "about-text-1":"ACLIS este o companie independentă de inginerie și consultanță care sprijină proiecte de infrastructură energetică, energie regenerabilă, stocare a energiei și mobilitate sustenabilă.",
-        "about-text-2":"Oferim expertiză tehnică, suport de inginerie și servicii de consultanță strategică pentru dezvoltatori, investitori, contractori EPC, operatori de rețea și proprietari de active pe întreg ciclul de viață al proiectelor.",
-
-        "services-btn":"Serviciile Noastre",
-        "contact-btn":"Contact",
-
-        "services-title":"Servicii",
-        "why-title":"De ce ACLIS",
-        "experience-title":"Experiență Relevantă",
-        "contact-title":"Contact"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ACLIS | Advanced Collaborative Integrated Solutions</title>
+
+  <meta name="description"
+        content="ACLIS – Independent engineering and advisory for power systems, renewable energy, BESS and e-mobility.">
+
+  <meta name="theme-color" content="#071525">
+
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="shortcut icon" href="./favicon.svg">
+
+  <style>
+    :root {
+      --navy: #071525;
+      --navy-2: #0b1d31;
+      --navy-3: #10283e;
+      --green: #79bd32;
+      --green-light: #9ad84b;
+      --white: #ffffff;
+      --text: #102238;
+      --muted: #637386;
+      --light: #f5f7f8;
+      --border: rgba(16,34,56,.10);
+      --shadow: 0 18px 50px rgba(7,21,37,.10);
     }
-};
 
-function setLanguage(lang){
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    document.querySelectorAll("[data-lang]").forEach(element => {
+    html {
+      scroll-behavior: smooth;
+    }
 
-        const key = element.getAttribute("data-lang");
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
 
-        if(translations[lang] && translations[lang][key]){
-            element.innerHTML = translations[lang][key];
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    });
+    /* =========================
+       HEADER
+    ========================= */
 
-    localStorage.setItem("language", lang);
-}
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+      padding: 22px 5%;
+    }
 
-window.onload = function(){
-    const savedLanguage = localStorage.getItem("language") || "en";
-    setLanguage(savedLanguage);
-};
-</script>
+    .nav {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-    
+    .brand img {
+      width: 245px;
+      max-width: 30vw;
+      display: block;
+      mix-blend-mode: screen;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 42px;
+    }
+
+    .language {
+      display: flex;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .language span:first-child {
+      color: var(--green-light);
+    }
+
+    .language span:last-child {
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    nav a {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      opacity: .92;
+      transition: .25s ease;
+    }
+
+    nav a:hover {
+      color: var(--green-light);
+    }
+
+    .nav-button {
+      background: var(--green);
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 7px;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .nav-button:hover {
+      background: var(--green-light);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 720px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 45%, rgba(79,145,53,.30), transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(71,119,166,.22), transparent 30%),
+        linear-gradient(110deg, #061422 0%, #091b2d 47%, #102e3c 100%);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 850px;
+      height: 850px;
+      right: -300px;
+      top: -250px;
+      border-radius: 50%;
+      background:
+        repeating-radial-gradient(
+          circle,
+          transparent 0,
+          transparent 38px,
+          rgba(121,189,50,.09) 40px,
+          transparent 42px
+        );
+      opacity: .65;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -10%;
+      bottom: -25%;
+      width: 75%;
+      height: 65%;
+      background:
+        linear-gradient(
+          165deg,
+          transparent 35%,
+          rgba(121,189,50,.11) 35.2%,
+          transparent 35.5%
+        ),
+        linear-gradient(
+          165deg,
+          transparent 50%,
+          rgba(121,189,50,.07) 50.2%,
+          transparent 50.5%
+        );
+      transform: rotate(-3deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      width: 90%;
+      max-width: 1400px;
+      margin: 100px auto 0;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--green-light);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: var(--green);
+    }
+
+    h1 {
+      color: #fff;
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      color: var(--green-light);
+    }
+
+    .hero-description {
+      color: rgba(255,255,255,.82);
+      font-size: 19px;
+      max-width: 670px;
+      margin-bottom: 16px;
+    }
+
+    .hero-services {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 35px;
+    }
+
+    .hero-services span {
+      color: var(--green-light);
+      padding: 0 7px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 15px 25px;
+      border-radius: 7px;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-light);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.75);
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      background: #fff;
+      color: var(--navy);
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .section {
+      padding: 100px 5%;
+    }
+
+    .about {
+      background: #fff;
+    }
+
+    .about-grid {
+      max-width: 1400px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .section-label {
+      color: #5b9d20;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .section-label::after {
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 2px;
+      background: var(--green);
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    h2 {
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      margin-bottom: 25px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    .about-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 14px 25px;
+      border-radius: 7px;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .about-button:hover {
+      background: var(--green);
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      padding: 27px 23px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 8px 28px rgba(7,21,37,.055);
+      transition: .3s ease;
+      min-height: 190px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: rgba(121,189,50,.35);
+    }
+
+    .service-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(121,189,50,.10);
+      color: #5e9f23;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    /* =========================
+       IMPACT
+    ========================= */
+
+    .impact {
+      background:
+        radial-gradient(circle at 15% 50%, rgba(121,189,50,.13), transparent 25%),
+        linear-gradient(120deg, #061523, #0b2033);
+      color: #fff;
+      padding: 55px 5%;
+    }
+
+    .impact-grid {
+      max-width: 1400px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .impact-item {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      border-right: 1px solid rgba(255,255,255,.12);
+    }
+
+    .impact-item:last-child {
+      border-right: none;
+    }
+
+    .impact-icon {
+      width: 50px;
+      height: 50px;
+      border: 1px solid rgba(121,189,50,.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-light);
+      font-size: 20px;
+    }
+
+    .impact-number {
+      font-size: 29px;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .impact-label {
+      color: rgba(255,255,255,.72);
+      font-size: 13px;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      padding: 100px 5%;
+      background: var(--light);
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .cta h2 {
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #061321;
+      color: #fff;
+      padding: 45px 5% 25px;
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .footer-logo img {
+      width: 190px;
+      mix-blend-mode: screen;
+    }
+
+    .footer-text {
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .copyright {
+      max-width: 1400px;
+      margin: 35px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.09);
+      color: rgba(255,255,255,.4);
+      font-size: 11px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1050px) {
+      .nav-right {
+        gap: 20px;
+      }
+
+      nav {
+        gap: 18px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      header {
+        padding: 15px 5%;
+      }
+
+      .brand img {
+        width: 175px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .nav-right {
+        margin-left: auto;
+      }
+
+      .nav-button {
+        padding: 9px 16px;
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 700px;
+      }
+
+      .hero-content {
+        margin-top: 80px;
+      }
+
+      h1 {
+        font-size: 43px;
+      }
+
+      .hero-description {
+        font-size: 17px;
+      }
+
+      .section {
+        padding: 70px 6%;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 15px;
+      }
+
+      .impact-item {
+        border-right: none;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-text {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .language {
+        display: none;
+      }
+
+      .hero {
+        min-height: 760px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-item {
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        padding-bottom: 20px;
+      }
+
+      .impact-item:last-child {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+
 <body>
-<nav class="navbar">
 
-<div class="nav-container">
-    
-<div class="language-switcher">
-    <button onclick="setLanguage('en')">EN</button>
-    <button onclick="setLanguage('ro')">RO</button>
-</div>
-    
-<div class="logo">
-    <img src="logo-aclis.png" alt="ACLIS Logo">
-</div>
+  <!-- ================= HEADER ================= -->
 
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#expertise">Expertise</a>
-<a href="#contact">Contact</a>
-</div>
+  <header>
+    <div class="nav">
 
-</div>
+      <a href="#" class="brand">
+        <img src="./logo-aclis.png" alt="ACLIS - Advanced Collaborative Integrated Solutions">
+      </a>
 
-</nav>
-<header>
+      <div class="nav-right">
 
-<p class="subtitle" data-lang="company-name">
-Advanced Collaborative<br>
-Integrated Solutions
-</p>
-
-<p class="subtitle" data-lang="tagline">
-Independent Engineering & Advisory
-</p>
-
-<p data-lang="sectors">
-Power Systems • Renewable Energy • BESS • E-Mobility
-</p>
-
-<br>
-
-
-<br><br>
-
-<a href="#services" class="button" data-lang="services-btn">Our Services</a>
-
-<a href="#contact" class="button-secondary" data-lang="contact-btn">Contact Us</a>
-
-</header>
-
-<section id="about">
-
-<h2 data-lang="about-title">About ACLIS</h2>
-
-<p data-lang="about-text-1">
-ACLIS is an independent engineering and advisory practice supporting energy infrastructure, renewable energy, battery storage and sustainable mobility projects.
-</p>
-
-<p data-lang="about-text-2">
-We provide technical expertise, engineering support and strategic advisory services to developers, investors, EPC contractors, utilities and asset owners throughout the project lifecycle.
-</p>
-
-</section>
-
-<section class="alt" id="services">
-
-<h2>Services</h2>
-
-<div class="services">
-
-<div class="card"><h3>Grid Connection Studies</h3></div>
-
-<div class="card"><h3>Power System Engineering</h3></div>
-
-<div class="card"><h3>Renewable Energy Projects</h3></div>
-
-<div class="card"><h3>Battery Energy Storage Systems</h3></div>
-
-<div class="card"><h3>Electrical Infrastructure</h3></div>
-
-<div class="card"><h3>Technical Due Diligence</h3></div>
-
-<div class="card"><h3>Agrivoltaic Solutions</h3></div>
-
-<div class="card"><h3>EV Charging Infrastructure</h3></div>
-
-<div class="card"><h3>Project Development Support</h3></div>
-
-<div class="card"><h3>Engineering Reviews</h3></div>
-
-</div>
-
-</section>
-
-
-<section id="why-aclis" class="section">
-
-    <h2>Why ACLIS</h2>
-
-    <div class="why-grid">
-
-        <div class="why-card">
-            <div class="why-icon">⚖️</div>
-            <h3>Independent Perspective</h3>
-            <p>Objective technical advice focused on project success.</p>
+        <div class="language">
+          <span>EN</span>
+          <span>RO</span>
         </div>
 
-        <div class="why-card">
-            <div class="why-icon">⚙️</div>
-            <h3>Engineering Expertise</h3>
-            <p>Experience across power systems and renewable energy projects.</p>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="nav-button">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          ACLIS
         </div>
 
-        <div class="why-card">
-            <div class="why-icon">🧩</div>
-            <h3>Integrated Solutions</h3>
-            <p>Engineering, advisory and development support under one framework.</p>
+        <h1>
+          Engineering inspired by nature.<br>
+          <span>Solutions built for the future.</span>
+        </h1>
+
+        <p class="hero-description">
+          Independent engineering & advisory for a sustainable energy future.
+        </p>
+
+        <p class="hero-services">
+          Power Systems
+          <span>•</span>
+          Renewable Energy
+          <span>•</span>
+          BESS
+          <span>•</span>
+          E-Mobility
+        </p>
+
+        <div class="buttons">
+          <a href="#services" class="btn btn-primary">
+            Our Services →
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            Contact Us →
+          </a>
         </div>
 
-        <div class="why-card">
-            <div class="why-icon">🤝</div>
-            <h3>Flexible Collaboration</h3>
-            <p>Tailored support adapted to project needs.</p>
-        </div>
+      </div>
 
     </div>
 
-</section>
+  </section>
 
-<section id="experience" class="section">
 
-<h2>Relevant Experience</h2>
+  <!-- ================= ABOUT ================= -->
 
-<div class="experience-grid">
+  <section class="section about" id="about">
 
-    <div class="exp-card">
-        <div class="exp-icon">💧</div>
+    <div class="about-grid">
 
-        <div class="exp-content">
-            <h3>Hydropower Rehabilitation</h3>
-            <p>
-                Engineering support and technical documentation
-                for hydropower modernization projects.
-            </p>
+      <div class="about-text">
+
+        <div class="section-label">
+          About ACLIS
         </div>
+
+        <h2>
+          Independent Engineering
+          <br>& Advisory
+        </h2>
+
+        <p>
+          ACLIS is an independent engineering and advisory practice
+          supporting energy infrastructure, renewable energy, battery
+          storage and sustainable mobility projects.
+        </p>
+
+        <p>
+          We provide technical expertise, engineering support and
+          strategic advisory services to developers, investors,
+          EPC contractors, utilities and asset owners throughout
+          the project lifecycle.
+        </p>
+
+        <a href="#services" class="about-button">
+          Explore our expertise →
+        </a>
+
+      </div>
+
+
+      <!-- SERVICES -->
+
+      <div class="services-grid" id="services">
+
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Power Systems</h3>
+          <p>
+            Grid connection advisory, substations, power system
+            studies and electrical engineering.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">☀</div>
+          <h3>Renewable Energy</h3>
+          <p>
+            Solar, wind and hybrid projects from feasibility
+            through detailed engineering.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">▣</div>
+          <h3>BESS Solutions</h3>
+          <p>
+            Battery energy storage systems engineering,
+            integration and technical advisory.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">⚙</div>
+          <h3>E-Mobility</h3>
+          <p>
+            EV charging infrastructure design and sustainable
+            mobility solutions.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✓</div>
+          <h3>Technical Due Diligence</h3>
+          <p>
+            Independent technical reviews, risk assessment
+            and bankable engineering reports.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">⌁</div>
+          <h3>Electrical Design</h3>
+          <p>
+            Detailed MV/HV electrical design for energy
+            infrastructure and renewable plants.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">♧</div>
+          <h3>Agrivoltaic Development</h3>
+          <p>
+            Innovative agrivoltaic solutions combining
+            sustainable land use and energy production.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">◆</div>
+          <h3>Knowledge & Training</h3>
+          <p>
+            Technical training, workshops and professional
+            knowledge development.
+          </p>
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="exp-card">
-        <div class="exp-icon">⚡</div>
+  </section>
 
-        <div class="exp-content">
-            <h3>Grid Connection Projects</h3>
-            <p>
-                Connection studies, technical assessments
-                and support during permitting and grid integration.
-            </p>
+
+  <!-- ================= IMPACT ================= -->
+
+  <section class="impact" id="expertise">
+
+    <div class="impact-grid">
+
+      <div class="impact-item">
+
+        <div class="impact-icon">✦</div>
+
+        <div>
+          <div class="impact-number">10+</div>
+          <div class="impact-label">Years of Experience</div>
         </div>
+
+      </div>
+
+
+      <div class="impact-item">
+
+        <div class="impact-icon">◇</div>
+
+        <div>
+          <div class="impact-number">100+</div>
+          <div class="impact-label">Projects Supported</div>
+        </div>
+
+      </div>
+
+
+      <div class="impact-item">
+
+        <div class="impact-icon">⚡</div>
+
+        <div>
+          <div class="impact-number">GW+</div>
+          <div class="impact-label">Energy Capacity Supported</div>
+        </div>
+
+      </div>
+
+
+      <div class="impact-item">
+
+        <div class="impact-icon">◎</div>
+
+        <div>
+          <div class="impact-number">Global</div>
+          <div class="impact-label">Project Experience</div>
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="exp-card">
-        <div class="exp-icon">☀️</div>
+  </section>
 
-        <div class="exp-content">
-            <h3>Renewable Energy</h3>
-            <p>
-                Technical advisory services for utility-scale
-                PV, wind and hybrid energy developments.
-            </p>
-        </div>
+
+  <!-- ================= CTA ================= -->
+
+  <section class="cta" id="contact">
+
+    <div class="cta-inner">
+
+      <div class="section-label">
+        Let's work together
+      </div>
+
+      <h2>
+        Engineering the next generation
+        of energy infrastructure.
+      </h2>
+
+      <p>
+        Tell us about your project and discover how ACLIS
+        can support your technical and strategic objectives.
+      </p>
+
+      <div class="buttons" style="justify-content:center;">
+
+        <a href="mailto:office@aclis.ro"
+           class="btn btn-primary">
+          Contact ACLIS →
+        </a>
+
+      </div>
+
     </div>
 
-    <div class="exp-card">
-        <div class="exp-icon">🔋</div>
+  </section>
 
-        <div class="exp-content">
-            <h3>Battery Storage Systems</h3>
-            <p>
-                Feasibility assessments, technology evaluation
-                and grid integration support.
-            </p>
-        </div>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <a href="#" class="footer-logo">
+        <img src="./logo-aclis.png" alt="ACLIS">
+      </a>
+
+      <div class="footer-text">
+        Advanced Collaborative Integrated Solutions<br>
+        Engineering inspired by nature. Solutions built for the future.
+      </div>
+
     </div>
 
-    <div class="exp-card">
-        <div class="exp-icon">🏭</div>
-
-        <div class="exp-content">
-            <h3>Electrical Infrastructure</h3>
-            <p>
-                Substations, power system studies and
-                electrical design support.
-            </p>
-        </div>
+    <div class="copyright">
+      © 2026 ACLIS – Advanced Collaborative Integrated Solutions. All rights reserved.
     </div>
 
-    <div class="exp-card">
-        <div class="exp-icon">🚗</div>
-
-        <div class="exp-content">
-            <h3>E-Mobility Infrastructure</h3>
-            <p>
-                Planning, design and implementation support
-                for EV charging networks.
-            </p>
-        </div>
-    </div>
-
-</div>
-
-</section>
-
-
-<section id="contact">
-
-<h2>Contact</h2>
-
-<p><strong>General Contact:</strong> contact@aclis.ro</p>
-
-<p><strong>European Contact:</strong> contact@aclis.eu</p>
-
-<p><strong>Business & Proposals:</strong> office@aclis.ro</p>
-
-<p><strong>Location:</strong> Romania</p>
-
-<p><strong>LinkedIn:</strong> Available upon request</p>
-
-<br>
-
-<a href="mailto:office@aclis.ro" class="button">
-Request Company Profile
-</a>
-
-</section>
-
-</section>
-
-<footer>
-
-<div class="footer-container">
-
-<div class="footer-column">
-
-<h3>ACLIS</h3>
-
-<p>
-Advanced Collaborative Integrated Solutions
-</p>
-
-<p>
-Power Systems • Renewable Energy • BESS • E-Mobility
-</p>
-
-</div>
-
-<div class="footer-column">
-
-<h3>Services</h3>
-
-<p>Grid Connection Advisory</p>
-<p>Power Systems Engineering</p>
-<p>Renewable Energy Solutions</p>
-<p>BESS Solutions</p>
-<p>Technical Due Diligence</p>
-
-</div>
-
-<div class="footer-column">
-
-<h3>Contact</h3>
-
-<p>contact@aclis.ro</p>
-<p>contact@aclis.eu</p>
-<p>office@aclis.ro</p>
-<p>Romania</p>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-
-© 2026 ACLIS. All rights reserved.
-
-</div>
-
-
-</footer>
+  </footer>
 
 </body>
 </html>
