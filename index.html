@@ -1,13 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>ACLIS | Advanced Collaborative Integrated Solutions</title>
 
-  <meta name="description"
-        content="ACLIS – Independent engineering and advisory for power systems, renewable energy, BESS and e-mobility.">
+  <meta
+    name="description"
+    content="ACLIS – Independent engineering and advisory for power systems, renewable energy, BESS and e-mobility."
+  >
 
   <meta name="theme-color" content="#071525">
 
@@ -15,19 +19,28 @@
   <link rel="shortcut icon" href="./favicon.svg">
 
   <style>
+
     :root {
       --navy: #071525;
       --navy-2: #0b1d31;
       --navy-3: #10283e;
+
       --green: #79bd32;
       --green-light: #9ad84b;
+
       --white: #ffffff;
+
       --text: #102238;
       --muted: #637386;
+
       --light: #f5f7f8;
-      --border: rgba(16,34,56,.10);
-      --shadow: 0 18px 50px rgba(7,21,37,.10);
+
+      --border: rgba(16, 34, 56, 0.10);
+
+      --shadow:
+        0 18px 50px rgba(7, 21, 37, 0.10);
     }
+
 
     * {
       box-sizing: border-box;
@@ -35,625 +48,1176 @@
       padding: 0;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       color: var(--text);
-      background: #fff;
+
+      background: #ffffff;
+
       line-height: 1.6;
     }
+
 
     a {
       color: inherit;
       text-decoration: none;
     }
 
-    /* =========================
+
+
+    /* =====================================================
        HEADER
-    ========================= */
+    ===================================================== */
 
     header {
       position: absolute;
+
       top: 0;
       left: 0;
+
       width: 100%;
+
       z-index: 20;
+
       padding: 22px 5%;
     }
 
+
     .nav {
       max-width: 1400px;
+
       margin: auto;
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
     }
 
+
     .brand img {
       width: 245px;
+
       max-width: 30vw;
+
       display: block;
+
+      /*
+        The logo contains dark navy elements.
+        Screen blend helps maintain visibility
+        over the dark hero background.
+      */
       mix-blend-mode: screen;
     }
 
+
     .nav-right {
       display: flex;
+
       align-items: center;
+
       gap: 42px;
     }
 
+
     .language {
       display: flex;
+
       gap: 10px;
+
       font-size: 13px;
+
       font-weight: 700;
     }
+
 
     .language span:first-child {
       color: var(--green-light);
     }
 
+
     .language span:last-child {
-      color: #fff;
+      color: #ffffff;
     }
+
 
     nav {
       display: flex;
+
       align-items: center;
+
       gap: 34px;
     }
 
+
     nav a {
-      color: #fff;
+      color: #ffffff;
+
       font-size: 15px;
+
       font-weight: 600;
-      opacity: .92;
-      transition: .25s ease;
+
+      opacity: 0.92;
+
+      transition: 0.25s ease;
     }
+
 
     nav a:hover {
       color: var(--green-light);
     }
 
+
     .nav-button {
       background: var(--green);
-      color: #fff;
+
+      color: #ffffff;
+
       padding: 12px 25px;
+
       border-radius: 7px;
+
       font-weight: 700;
-      transition: .25s ease;
+
+      transition: 0.25s ease;
     }
+
 
     .nav-button:hover {
       background: var(--green-light);
+
       color: var(--navy);
+
       transform: translateY(-2px);
     }
 
-    /* =========================
+
+
+    /* =====================================================
        HERO
-    ========================= */
+    ===================================================== */
 
     .hero {
       min-height: 720px;
+
       position: relative;
+
       overflow: hidden;
+
       background:
-        radial-gradient(circle at 78% 45%, rgba(79,145,53,.30), transparent 25%),
-        radial-gradient(circle at 90% 80%, rgba(71,119,166,.22), transparent 30%),
-        linear-gradient(110deg, #061422 0%, #091b2d 47%, #102e3c 100%);
+        radial-gradient(
+          circle at 78% 45%,
+          rgba(79, 145, 53, 0.30),
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 90% 80%,
+          rgba(71, 119, 166, 0.22),
+          transparent 30%
+        ),
+        linear-gradient(
+          110deg,
+          #061422 0%,
+          #091b2d 47%,
+          #102e3c 100%
+        );
+
       display: flex;
+
       align-items: center;
     }
 
+
     .hero::before {
       content: "";
+
       position: absolute;
+
       width: 850px;
       height: 850px;
+
       right: -300px;
       top: -250px;
+
       border-radius: 50%;
+
       background:
         repeating-radial-gradient(
           circle,
           transparent 0,
           transparent 38px,
-          rgba(121,189,50,.09) 40px,
+          rgba(121, 189, 50, 0.09) 40px,
           transparent 42px
         );
-      opacity: .65;
+
+      opacity: 0.65;
     }
+
 
     .hero::after {
       content: "";
+
       position: absolute;
+
       right: -10%;
       bottom: -25%;
+
       width: 75%;
       height: 65%;
+
       background:
         linear-gradient(
           165deg,
           transparent 35%,
-          rgba(121,189,50,.11) 35.2%,
+          rgba(121, 189, 50, 0.11) 35.2%,
           transparent 35.5%
         ),
         linear-gradient(
           165deg,
           transparent 50%,
-          rgba(121,189,50,.07) 50.2%,
+          rgba(121, 189, 50, 0.07) 50.2%,
           transparent 50.5%
         );
+
       transform: rotate(-3deg);
     }
 
+
     .hero-content {
       position: relative;
+
       z-index: 5;
+
       width: 90%;
+
       max-width: 1400px;
+
       margin: 100px auto 0;
     }
+
 
     .hero-copy {
       max-width: 720px;
     }
 
+
     .eyebrow {
       display: inline-flex;
+
       align-items: center;
+
       gap: 12px;
+
       color: var(--green-light);
+
       text-transform: uppercase;
+
       letter-spacing: 3px;
+
       font-size: 12px;
+
       font-weight: 700;
+
       margin-bottom: 22px;
     }
+
 
     .eyebrow::before {
       content: "";
+
       width: 38px;
+
       height: 2px;
+
       background: var(--green);
     }
 
+
     h1 {
-      color: #fff;
+      color: #ffffff;
+
       font-size: clamp(42px, 5vw, 72px);
+
       line-height: 1.08;
+
       letter-spacing: -2px;
+
       margin-bottom: 22px;
     }
+
 
     h1 span {
       color: var(--green-light);
     }
 
+
     .hero-description {
-      color: rgba(255,255,255,.82);
+      color: rgba(255, 255, 255, 0.82);
+
       font-size: 19px;
+
       max-width: 670px;
+
       margin-bottom: 16px;
     }
 
+
     .hero-services {
-      color: #fff;
+      color: #ffffff;
+
       font-size: 16px;
+
       margin-bottom: 35px;
     }
 
+
     .hero-services span {
       color: var(--green-light);
+
       padding: 0 7px;
     }
 
+
     .buttons {
       display: flex;
+
       gap: 15px;
+
       flex-wrap: wrap;
     }
 
+
     .btn {
       display: inline-flex;
+
       align-items: center;
+
       gap: 14px;
+
       padding: 15px 25px;
+
       border-radius: 7px;
+
       font-weight: 700;
-      transition: .25s ease;
+
+      transition: 0.25s ease;
     }
+
 
     .btn-primary {
       background: var(--green);
-      color: #fff;
+
+      color: #ffffff;
     }
+
 
     .btn-primary:hover {
       background: var(--green-light);
+
       color: var(--navy);
+
       transform: translateY(-2px);
     }
 
+
     .btn-outline {
-      border: 1px solid rgba(255,255,255,.75);
-      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+
+      color: #ffffff;
     }
 
+
     .btn-outline:hover {
-      background: #fff;
+      background: #ffffff;
+
       color: var(--navy);
     }
 
-    /* =========================
-       ABOUT
-    ========================= */
+
+
+    /* =====================================================
+       GENERAL SECTIONS
+    ===================================================== */
 
     .section {
       padding: 100px 5%;
     }
 
+
     .about {
-      background: #fff;
+      background: #ffffff;
     }
+
 
     .about-grid {
       max-width: 1400px;
+
       margin: auto;
+
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
+
+      grid-template-columns: 0.8fr 1.2fr;
+
       gap: 70px;
+
       align-items: start;
     }
 
+
     .section-label {
       color: #5b9d20;
+
       font-size: 12px;
+
       text-transform: uppercase;
+
       letter-spacing: 2px;
+
       font-weight: 800;
+
       margin-bottom: 16px;
     }
 
+
     .section-label::after {
       content: "";
+
       display: inline-block;
+
       width: 30px;
+
       height: 2px;
+
       background: var(--green);
+
       margin-left: 10px;
+
       vertical-align: middle;
     }
 
+
     h2 {
       font-size: clamp(34px, 4vw, 52px);
+
       line-height: 1.12;
+
       letter-spacing: -1.5px;
+
       margin-bottom: 25px;
     }
 
+
     .about-text p {
       color: var(--muted);
+
       margin-bottom: 18px;
+
       font-size: 16px;
     }
 
+
     .about-button {
       display: inline-block;
+
       margin-top: 15px;
+
       padding: 14px 25px;
+
       border-radius: 7px;
+
       background: var(--navy);
-      color: #fff;
+
+      color: #ffffff;
+
       font-weight: 700;
-      transition: .25s ease;
+
+      transition: 0.25s ease;
     }
+
 
     .about-button:hover {
       background: var(--green);
+
       transform: translateY(-2px);
     }
 
-    /* =========================
+
+
+    /* =====================================================
        SERVICES
-    ========================= */
+    ===================================================== */
 
     .services-grid {
       display: grid;
+
       grid-template-columns: repeat(4, 1fr);
+
       gap: 16px;
     }
 
+
     .service-card {
-      padding: 27px 23px;
+      padding: 25px 23px;
+
       border: 1px solid var(--border);
+
       border-radius: 12px;
-      background: #fff;
-      box-shadow: 0 8px 28px rgba(7,21,37,.055);
-      transition: .3s ease;
-      min-height: 190px;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 8px 28px rgba(7, 21, 37, 0.055);
+
+      transition: 0.3s ease;
+
+      min-height: 205px;
     }
+
 
     .service-card:hover {
       transform: translateY(-7px);
+
       box-shadow: var(--shadow);
-      border-color: rgba(121,189,50,.35);
+
+      border-color:
+        rgba(121, 189, 50, 0.35);
     }
 
+
     .service-icon {
-      width: 45px;
-      height: 45px;
-      border-radius: 10px;
+      width: 48px;
+      height: 48px;
+
+      border-radius: 12px;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
-      background: rgba(121,189,50,.10);
+
+      background:
+        rgba(121, 189, 50, 0.10);
+
       color: #5e9f23;
-      font-size: 22px;
-      margin-bottom: 18px;
+
+      margin-bottom: 17px;
     }
+
+
+    .service-icon svg {
+      width: 27px;
+      height: 27px;
+
+      stroke: currentColor;
+
+      fill: none;
+
+      stroke-width: 1.8;
+
+      stroke-linecap: round;
+
+      stroke-linejoin: round;
+    }
+
 
     .service-card h3 {
       font-size: 17px;
+
       margin-bottom: 8px;
     }
 
+
     .service-card p {
       color: var(--muted);
+
       font-size: 13px;
+
       line-height: 1.55;
     }
 
-    /* =========================
+
+
+    /* =====================================================
+       SPECIALIST CAPABILITIES
+    ===================================================== */
+
+    .specialties {
+      max-width: 1400px;
+
+      margin: 55px auto 0;
+
+      padding-top: 42px;
+
+      border-top:
+        1px solid var(--border);
+    }
+
+
+    .specialties-title {
+      text-align: center;
+
+      color: var(--text);
+
+      font-size: 14px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      font-weight: 800;
+
+      margin-bottom: 24px;
+    }
+
+
+    .specialty-list {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 12px;
+    }
+
+
+    .specialty {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding: 12px 18px;
+
+      border: 1px solid #d9e0e6;
+
+      border-radius: 999px;
+
+      color: #2458d7;
+
+      background: #ffffff;
+
+      font-weight: 700;
+
+      font-size: 14px;
+
+      transition: 0.25s ease;
+    }
+
+
+    .specialty:hover {
+      border-color: var(--green);
+
+      color: #4f8f20;
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 8px 22px rgba(7, 21, 37, 0.07);
+    }
+
+
+    .specialty svg {
+      width: 19px;
+      height: 19px;
+
+      stroke: currentColor;
+
+      fill: none;
+
+      stroke-width: 1.7;
+
+      stroke-linecap: round;
+
+      stroke-linejoin: round;
+
+      flex: none;
+    }
+
+
+
+    /* =====================================================
        IMPACT
-    ========================= */
+    ===================================================== */
 
     .impact {
       background:
-        radial-gradient(circle at 15% 50%, rgba(121,189,50,.13), transparent 25%),
-        linear-gradient(120deg, #061523, #0b2033);
-      color: #fff;
+        radial-gradient(
+          circle at 15% 50%,
+          rgba(121, 189, 50, 0.13),
+          transparent 25%
+        ),
+        linear-gradient(
+          120deg,
+          #061523,
+          #0b2033
+        );
+
+      color: #ffffff;
+
       padding: 55px 5%;
     }
 
+
     .impact-grid {
       max-width: 1400px;
+
       margin: auto;
+
       display: grid;
+
       grid-template-columns: repeat(4, 1fr);
+
       gap: 30px;
     }
 
+
     .impact-item {
       display: flex;
+
       align-items: center;
+
       gap: 17px;
-      border-right: 1px solid rgba(255,255,255,.12);
+
+      border-right:
+        1px solid rgba(255, 255, 255, 0.12);
     }
+
 
     .impact-item:last-child {
       border-right: none;
     }
 
+
     .impact-icon {
       width: 50px;
       height: 50px;
-      border: 1px solid rgba(121,189,50,.4);
+
+      border: 1px solid
+        rgba(121, 189, 50, 0.4);
+
       border-radius: 50%;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
+
       color: var(--green-light);
-      font-size: 20px;
     }
+
+
+    .impact-icon svg {
+      width: 23px;
+      height: 23px;
+
+      stroke: currentColor;
+
+      fill: none;
+
+      stroke-width: 1.7;
+
+      stroke-linecap: round;
+
+      stroke-linejoin: round;
+    }
+
 
     .impact-number {
       font-size: 29px;
+
       font-weight: 800;
+
       line-height: 1;
+
       margin-bottom: 5px;
     }
 
+
     .impact-label {
-      color: rgba(255,255,255,.72);
+      color:
+        rgba(255, 255, 255, 0.72);
+
       font-size: 13px;
     }
 
-    /* =========================
-       CTA
-    ========================= */
+
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
 
     .cta {
       padding: 100px 5%;
+
       background: var(--light);
+
       text-align: center;
     }
 
+
     .cta-inner {
-      max-width: 850px;
+      max-width: 900px;
+
       margin: auto;
     }
+
 
     .cta h2 {
       margin-bottom: 18px;
     }
 
-    .cta p {
+
+    .cta > .cta-inner > p {
       color: var(--muted);
+
       font-size: 17px;
+
       margin-bottom: 30px;
     }
 
-    /* =========================
+
+    .contact-details {
+      max-width: 760px;
+
+      margin: 35px auto;
+
+      padding: 22px 30px;
+
+      border:
+        1px solid rgba(16, 34, 56, 0.10);
+
+      border-radius: 14px;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 10px 35px rgba(7, 21, 37, 0.06);
+
+      text-align: left;
+    }
+
+
+    .contact-item {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 25px;
+
+      padding: 13px 0;
+
+      border-bottom:
+        1px solid rgba(16, 34, 56, 0.08);
+    }
+
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+
+    .contact-item span {
+      color: var(--text);
+
+      font-weight: 700;
+    }
+
+
+    .contact-item a,
+    .contact-item strong {
+      color: var(--muted);
+
+      font-weight: 500;
+    }
+
+
+    .contact-item a:hover {
+      color: var(--green);
+    }
+
+
+
+    /* =====================================================
        FOOTER
-    ========================= */
+    ===================================================== */
 
     footer {
       background: #061321;
-      color: #fff;
+
+      color: #ffffff;
+
       padding: 45px 5% 25px;
     }
 
+
     .footer-inner {
       max-width: 1400px;
+
       margin: auto;
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       gap: 30px;
     }
 
+
     .footer-logo img {
       width: 190px;
+
       mix-blend-mode: screen;
     }
 
+
     .footer-text {
-      color: rgba(255,255,255,.55);
+      color:
+        rgba(255, 255, 255, 0.55);
+
       font-size: 12px;
+
       text-align: right;
     }
 
+
     .copyright {
       max-width: 1400px;
+
       margin: 35px auto 0;
+
       padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,.09);
-      color: rgba(255,255,255,.4);
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.09);
+
+      color:
+        rgba(255, 255, 255, 0.4);
+
       font-size: 11px;
     }
 
-    /* =========================
+
+
+    /* =====================================================
        RESPONSIVE
-    ========================= */
+    ===================================================== */
 
     @media (max-width: 1050px) {
+
       .nav-right {
         gap: 20px;
       }
+
 
       nav {
         gap: 18px;
       }
 
+
       .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
+
 
       .about-grid {
         grid-template-columns: 1fr;
+
         gap: 45px;
       }
+
     }
 
+
     @media (max-width: 760px) {
+
       header {
         padding: 15px 5%;
       }
+
 
       .brand img {
         width: 175px;
       }
 
+
       nav {
         display: none;
       }
+
 
       .nav-right {
         margin-left: auto;
       }
 
+
       .nav-button {
         padding: 9px 16px;
+
         font-size: 13px;
       }
+
 
       .hero {
         min-height: 700px;
       }
 
+
       .hero-content {
         margin-top: 80px;
       }
+
 
       h1 {
         font-size: 43px;
       }
 
+
       .hero-description {
         font-size: 17px;
       }
+
 
       .section {
         padding: 70px 6%;
       }
 
+
       .services-grid {
         grid-template-columns: 1fr;
       }
 
+
       .impact-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
+
         gap: 35px 15px;
       }
+
 
       .impact-item {
         border-right: none;
       }
 
+
       .footer-inner {
         flex-direction: column;
+
         align-items: flex-start;
       }
+
 
       .footer-text {
         text-align: left;
       }
+
+
+      .specialty {
+        font-size: 13px;
+
+        padding: 10px 14px;
+      }
+
     }
 
+
+    @media (max-width: 600px) {
+
+      .contact-details {
+        padding: 20px;
+      }
+
+
+      .contact-item {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 3px;
+      }
+
+    }
+
+
     @media (max-width: 480px) {
+
       .language {
         display: none;
       }
+
 
       .hero {
         min-height: 760px;
       }
 
+
       h1 {
         font-size: 38px;
       }
+
 
       .impact-grid {
         grid-template-columns: 1fr;
       }
 
+
       .impact-item {
-        border-bottom: 1px solid rgba(255,255,255,.1);
+        border-bottom:
+          1px solid rgba(255, 255, 255, 0.1);
+
         padding-bottom: 20px;
       }
+
 
       .impact-item:last-child {
         border-bottom: none;
       }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
 
   <header>
+
     <div class="nav">
 
       <a href="#" class="brand">
-        <img src="./logo-aclis.png" alt="ACLIS - Advanced Collaborative Integrated Solutions">
+
+        <img
+          src="./logo-aclis.png"
+          alt="ACLIS - Advanced Collaborative Integrated Solutions"
+        >
+
       </a>
+
 
       <div class="nav-right">
 
@@ -662,24 +1226,38 @@
           <span>RO</span>
         </div>
 
+
         <nav>
+
           <a href="#about">About</a>
+
           <a href="#services">Services</a>
+
           <a href="#expertise">Expertise</a>
+
           <a href="#contact">Contact</a>
+
         </nav>
 
-        <a href="#contact" class="nav-button">
+
+        <a
+          href="#contact"
+          class="nav-button"
+        >
           Contact
         </a>
 
       </div>
 
     </div>
+
   </header>
 
 
-  <!-- ================= HERO ================= -->
+
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
 
   <section class="hero">
 
@@ -691,33 +1269,64 @@
           ACLIS
         </div>
 
+
         <h1>
-          Engineering inspired by nature.<br>
-          <span>Solutions built for the future.</span>
+
+          Engineering inspired by nature.
+
+          <br>
+
+          <span>
+            Solutions built for the future.
+          </span>
+
         </h1>
 
+
         <p class="hero-description">
-          Independent engineering & advisory for a sustainable energy future.
+
+          Independent engineering &amp; advisory
+          for a sustainable energy future.
+
         </p>
+
 
         <p class="hero-services">
+
           Power Systems
+
           <span>•</span>
+
           Renewable Energy
+
           <span>•</span>
+
           BESS
+
           <span>•</span>
+
           E-Mobility
+
         </p>
 
+
         <div class="buttons">
-          <a href="#services" class="btn btn-primary">
+
+          <a
+            href="#services"
+            class="btn btn-primary"
+          >
             Our Services →
           </a>
 
-          <a href="#contact" class="btn btn-outline">
+
+          <a
+            href="#contact"
+            class="btn btn-outline"
+          >
             Contact Us →
           </a>
+
         </div>
 
       </div>
@@ -727,11 +1336,20 @@
   </section>
 
 
-  <!-- ================= ABOUT ================= -->
 
-  <section class="section about" id="about">
+  <!-- =====================================================
+       ABOUT + SERVICES
+  ===================================================== -->
+
+  <section
+    class="section about"
+    id="about"
+  >
 
     <div class="about-grid">
+
+
+      <!-- ABOUT -->
 
       <div class="about-text">
 
@@ -739,105 +1357,612 @@
           About ACLIS
         </div>
 
+
         <h2>
+
           Independent Engineering
-          <br>& Advisory
+
+          <br>
+
+          &amp; Advisory
+
         </h2>
 
-        <p>
-          ACLIS is an independent engineering and advisory practice
-          supporting energy infrastructure, renewable energy, battery
-          storage and sustainable mobility projects.
-        </p>
 
         <p>
-          We provide technical expertise, engineering support and
-          strategic advisory services to developers, investors,
-          EPC contractors, utilities and asset owners throughout
-          the project lifecycle.
+
+          ACLIS is an independent engineering
+          and advisory practice supporting
+          energy infrastructure, renewable energy,
+          battery storage and sustainable mobility
+          projects.
+
         </p>
 
-        <a href="#services" class="about-button">
+
+        <p>
+
+          We provide technical expertise,
+          engineering support and strategic
+          advisory services to developers,
+          investors, EPC contractors, utilities
+          and asset owners throughout the
+          project lifecycle.
+
+        </p>
+
+
+        <a
+          href="#services"
+          class="about-button"
+        >
           Explore our expertise →
         </a>
 
       </div>
 
 
+
       <!-- SERVICES -->
 
-      <div class="services-grid" id="services">
+      <div>
 
-        <div class="service-card">
-          <div class="service-icon">⚡</div>
-          <h3>Power Systems</h3>
-          <p>
-            Grid connection advisory, substations, power system
-            studies and electrical engineering.
-          </p>
+        <div
+          class="services-grid"
+          id="services"
+        >
+
+
+          <!-- POWER SYSTEMS -->
+
+          <div class="service-card">
+
+            <div class="service-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M12 3v18M5 9h14M7 9l-2 12M17 9l2 12M4 21h16M8 9l4-6 4 6"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <h3>
+              Power Systems
+            </h3>
+
+
+            <p>
+
+              Grid connection advisory,
+              substations, power system
+              studies and electrical engineering.
+
+            </p>
+
+          </div>
+
+
+
+          <!-- RENEWABLE -->
+
+          <div class="service-card">
+
+            <div class="service-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M3 15h18M5 15l2-8h10l2 8M8 7l-2-3M16 7l2-3M12 3v4M5 19h14M7 15v4M17 15v4"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <h3>
+              Renewable Energy
+            </h3>
+
+
+            <p>
+
+              Solar, wind and hybrid projects
+              from feasibility through detailed
+              engineering.
+
+            </p>
+
+          </div>
+
+
+
+          <!-- BESS -->
+
+          <div class="service-card">
+
+            <div class="service-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <rect
+                  x="3"
+                  y="6"
+                  width="17"
+                  height="12"
+                  rx="2"
+                />
+
+                <path
+                  d="M20 10h2v4h-2M8 10l-2 4h4l-2 4M13 9v6"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <h3>
+              BESS Solutions
+            </h3>
+
+
+            <p>
+
+              Battery energy storage systems
+              engineering, integration and
+              technical advisory.
+
+            </p>
+
+          </div>
+
+
+
+          <!-- E-MOBILITY -->
+
+          <div class="service-card">
+
+            <div class="service-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M5 18v-7a5 5 0 0 1 10 0v7M5 18h10M15 13h4v5h-4M19 13v-3M17 8v2M21 8v2"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <h3>
+              E-Mobility
+            </h3>
+
+
+            <p>
+
+              EV charging infrastructure
+              design and sustainable mobility
+              solutions.
+
+            </p>
+
+          </div>
+
+
+
+          <!-- DUE DILIGENCE -->
+
+          <div class="service-card">
+
+            <div class="service-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M5 4h11a2 2 0 0 1 2 2v14H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"
+                />
+
+                <path
+                  d="M7 8h7M7 12h5M7 16h3M18 8l2 2-6 6-3 1 1-3 6-6Z"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <h3>
+              Technical Due Diligence
+            </h3>
+
+
+            <p>
+
+              Independent technical reviews,
+              risk assessment and bankable
+              engineering reports.
+
+            </p>
+
+          </div>
+
+
+
+          <!-- ELECTRICAL DESIGN -->
+
+          <div class="service-card">
+
+            <div class="service-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6M15 7h4v4"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <h3>
+              Electrical Design
+            </h3>
+
+
+            <p>
+
+              Detailed MV/HV electrical design
+              for energy infrastructure and
+              renewable plants.
+
+            </p>
+
+          </div>
+
+
+
+          <!-- AGRIVOLTAIC -->
+
+          <div class="service-card">
+
+            <div class="service-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M12 20V11M12 11l-4 4M12 11l4 4M5 20h14M6 8l2-3 2 3M14 8l2-3 2 3M4 10h16"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <h3>
+              Agrivoltaic Development
+            </h3>
+
+
+            <p>
+
+              Innovative agrivoltaic solutions
+              combining sustainable land use
+              and energy production.
+
+            </p>
+
+          </div>
+
+
+
+          <!-- TRAINING -->
+
+          <div class="service-card">
+
+            <div class="service-icon">
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M4 5h16v11H4zM8 20h8M12 16v4M7 8h10M8 11h8"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <h3>
+              Knowledge &amp; Training
+            </h3>
+
+
+            <p>
+
+              Technical training, workshops
+              and professional knowledge
+              development.
+
+            </p>
+
+          </div>
+
+
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">☀</div>
-          <h3>Renewable Energy</h3>
-          <p>
-            Solar, wind and hybrid projects from feasibility
-            through detailed engineering.
-          </p>
-        </div>
 
-        <div class="service-card">
-          <div class="service-icon">▣</div>
-          <h3>BESS Solutions</h3>
-          <p>
-            Battery energy storage systems engineering,
-            integration and technical advisory.
-          </p>
-        </div>
 
-        <div class="service-card">
-          <div class="service-icon">⚙</div>
-          <h3>E-Mobility</h3>
-          <p>
-            EV charging infrastructure design and sustainable
-            mobility solutions.
-          </p>
-        </div>
+        <!-- =================================================
+             SPECIALIST CAPABILITIES
+        ================================================= -->
 
-        <div class="service-card">
-          <div class="service-icon">✓</div>
-          <h3>Technical Due Diligence</h3>
-          <p>
-            Independent technical reviews, risk assessment
-            and bankable engineering reports.
-          </p>
-        </div>
+        <div class="specialties">
 
-        <div class="service-card">
-          <div class="service-icon">⌁</div>
-          <h3>Electrical Design</h3>
-          <p>
-            Detailed MV/HV electrical design for energy
-            infrastructure and renewable plants.
-          </p>
-        </div>
+          <div class="specialties-title">
 
-        <div class="service-card">
-          <div class="service-icon">♧</div>
-          <h3>Agrivoltaic Development</h3>
-          <p>
-            Innovative agrivoltaic solutions combining
-            sustainable land use and energy production.
-          </p>
-        </div>
+            Specialist Capabilities
 
-        <div class="service-card">
-          <div class="service-icon">◆</div>
-          <h3>Knowledge & Training</h3>
-          <p>
-            Technical training, workshops and professional
-            knowledge development.
-          </p>
+          </div>
+
+
+          <div class="specialty-list">
+
+
+            <a
+              class="specialty"
+              href="#services"
+            >
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M3 18h18M5 15l4-5 3 3 7-8M19 5h-4M19 5v4"
+                />
+
+              </svg>
+
+              Grid Connection Studies
+
+            </a>
+
+
+
+            <a
+              class="specialty"
+              href="#services"
+            >
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M12 3v18M5 9h14M7 9l-2 12M17 9l2 12M4 21h16"
+                />
+
+              </svg>
+
+              Power System Engineering
+
+            </a>
+
+
+
+            <a
+              class="specialty"
+              href="#services"
+            >
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M3 15h18M5 15l2-8h10l2 8M8 7l-2-3M16 7l2-3M12 3v4"
+                />
+
+              </svg>
+
+              Renewable Energy Projects
+
+            </a>
+
+
+
+            <a
+              class="specialty"
+              href="#services"
+            >
+
+              <svg viewBox="0 0 24 24">
+
+                <rect
+                  x="3"
+                  y="6"
+                  width="17"
+                  height="12"
+                  rx="2"
+                />
+
+                <path
+                  d="M20 10h2v4h-2M8 10l-2 4h4l-2 4"
+                />
+
+              </svg>
+
+              Battery Energy Storage Systems
+
+            </a>
+
+
+
+            <a
+              class="specialty"
+              href="#services"
+            >
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"
+                />
+
+              </svg>
+
+              Electrical Infrastructure
+
+            </a>
+
+
+
+            <a
+              class="specialty"
+              href="#services"
+            >
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M5 4h11a2 2 0 0 1 2 2v14H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"
+                />
+
+                <path
+                  d="M7 8h7M7 12h5M7 16h3"
+                />
+
+              </svg>
+
+              Technical Due Diligence
+
+            </a>
+
+
+
+            <a
+              class="specialty"
+              href="#services"
+            >
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M12 20V11M12 11l-4 4M12 11l4 4M5 20h14M6 8l2-3 2 3M14 8l2-3 2 3"
+                />
+
+              </svg>
+
+              Agrivoltaic Solutions
+
+            </a>
+
+
+
+            <a
+              class="specialty"
+              href="#services"
+            >
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M5 18v-7a5 5 0 0 1 10 0v7M5 18h10M15 13h4v5h-4M19 13v-3"
+                />
+
+              </svg>
+
+              EV Charging Infrastructure
+
+            </a>
+
+
+
+            <a
+              class="specialty"
+              href="#services"
+            >
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6M15 7h4v4"
+                />
+
+              </svg>
+
+              Project Development Support
+
+            </a>
+
+
+
+            <a
+              class="specialty"
+              href="#services"
+            >
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M4 5h16v14H4zM7 9h10M7 13h6M7 16h4"
+                />
+
+              </svg>
+
+              Engineering Reviews
+
+            </a>
+
+
+
+            <a
+              class="specialty"
+              href="#services"
+            >
+
+              <svg viewBox="0 0 24 24">
+
+                <path
+                  d="M4 6h16v12H4zM8 4v4M16 4v4M7 12h10M7 15h6"
+                />
+
+              </svg>
+
+              Digital Engineering &amp; Automation
+
+            </a>
+
+
+
+            <a
+              class="specialty"
+              href="#services"
+            >
+
+              <svg viewBox="0 0 24 24">
+
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="8"
+                />
+
+                <path
+                  d="M12 7v5l3 2M8 4l-2-2M16 4l2-2"
+                />
+
+              </svg>
+
+              Research &amp; Innovation
+
+            </a>
+
+
+          </div>
+
         </div>
 
       </div>
@@ -847,120 +1972,343 @@
   </section>
 
 
-  <!-- ================= IMPACT ================= -->
 
-  <section class="impact" id="expertise">
+  <!-- =====================================================
+       EXPERTISE / IMPACT
+  ===================================================== -->
+
+  <section
+    class="impact"
+    id="expertise"
+  >
 
     <div class="impact-grid">
 
+
       <div class="impact-item">
 
-        <div class="impact-icon">✦</div>
+        <div class="impact-icon">
+
+          <svg viewBox="0 0 24 24">
+
+            <circle
+              cx="12"
+              cy="12"
+              r="8"
+            />
+
+            <path
+              d="M12 7v5l3 2"
+            />
+
+          </svg>
+
+        </div>
+
 
         <div>
-          <div class="impact-number">10+</div>
-          <div class="impact-label">Years of Experience</div>
+
+          <div class="impact-number">
+            10+
+          </div>
+
+          <div class="impact-label">
+            Years of Experience
+          </div>
+
         </div>
 
       </div>
 
 
+
       <div class="impact-item">
 
-        <div class="impact-icon">◇</div>
+        <div class="impact-icon">
+
+          <svg viewBox="0 0 24 24">
+
+            <path
+              d="M4 12a8 8 0 0 1 14-5l2 2M20 12a8 8 0 0 1-14 5l-2-2M8 8h4M12 16H8"
+            />
+
+          </svg>
+
+        </div>
+
 
         <div>
-          <div class="impact-number">100+</div>
-          <div class="impact-label">Projects Supported</div>
+
+          <div class="impact-number">
+            100+
+          </div>
+
+          <div class="impact-label">
+            Projects Supported
+          </div>
+
         </div>
 
       </div>
 
 
+
       <div class="impact-item">
 
-        <div class="impact-icon">⚡</div>
+        <div class="impact-icon">
+
+          <svg viewBox="0 0 24 24">
+
+            <path
+              d="M12 3v18M5 9h14M7 9l-2 12M17 9l2 12"
+            />
+
+          </svg>
+
+        </div>
+
 
         <div>
-          <div class="impact-number">GW+</div>
-          <div class="impact-label">Energy Capacity Supported</div>
+
+          <div class="impact-number">
+            GW+
+          </div>
+
+          <div class="impact-label">
+            Energy Capacity Supported
+          </div>
+
         </div>
 
       </div>
 
 
+
       <div class="impact-item">
 
-        <div class="impact-icon">◎</div>
+        <div class="impact-icon">
+
+          <svg viewBox="0 0 24 24">
+
+            <circle
+              cx="12"
+              cy="12"
+              r="8"
+            />
+
+            <path
+              d="M4 12h16M12 4a12 12 0 0 1 0 16M12 4a12 12 0 0 0 0 16"
+            />
+
+          </svg>
+
+        </div>
+
 
         <div>
-          <div class="impact-number">Global</div>
-          <div class="impact-label">Project Experience</div>
+
+          <div class="impact-number">
+            Global
+          </div>
+
+          <div class="impact-label">
+            Project Experience
+          </div>
+
         </div>
 
       </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- ================= CTA ================= -->
 
-  <section class="cta" id="contact">
+  <!-- =====================================================
+       CONTACT
+  ===================================================== -->
+
+  <section
+    class="cta"
+    id="contact"
+  >
 
     <div class="cta-inner">
+
 
       <div class="section-label">
         Let's work together
       </div>
 
+
       <h2>
+
         Engineering the next generation
         of energy infrastructure.
+
       </h2>
 
+
       <p>
-        Tell us about your project and discover how ACLIS
-        can support your technical and strategic objectives.
+
+        Tell us about your project and discover
+        how ACLIS can support your technical
+        and strategic objectives.
+
       </p>
 
-      <div class="buttons" style="justify-content:center;">
 
-        <a href="mailto:office@aclis.ro"
-           class="btn btn-primary">
+
+      <!-- CONTACT DETAILS -->
+
+      <div class="contact-details">
+
+
+        <div class="contact-item">
+
+          <span>
+            General Contact
+          </span>
+
+          <a href="mailto:contact@aclis.ro">
+            contact@aclis.ro
+          </a>
+
+        </div>
+
+
+
+        <div class="contact-item">
+
+          <span>
+            European Contact
+          </span>
+
+          <a href="mailto:contact@aclis.eu">
+            contact@aclis.eu
+          </a>
+
+        </div>
+
+
+
+        <div class="contact-item">
+
+          <span>
+            Business &amp; Proposals
+          </span>
+
+          <a href="mailto:office@aclis.ro">
+            office@aclis.ro
+          </a>
+
+        </div>
+
+
+
+        <div class="contact-item">
+
+          <span>
+            Location
+          </span>
+
+          <strong>
+            Romania
+          </strong>
+
+        </div>
+
+
+
+        <div class="contact-item">
+
+          <span>
+            LinkedIn
+          </span>
+
+          <strong>
+            Available upon request
+          </strong>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div
+        class="buttons"
+        style="justify-content:center"
+      >
+
+        <a
+          href="mailto:office@aclis.ro"
+          class="btn btn-primary"
+        >
+
           Contact ACLIS →
+
         </a>
 
       </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- ================= FOOTER ================= -->
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
 
   <footer>
 
     <div class="footer-inner">
 
-      <a href="#" class="footer-logo">
-        <img src="./logo-aclis.png" alt="ACLIS">
+
+      <a
+        href="#"
+        class="footer-logo"
+      >
+
+        <img
+          src="./logo-aclis.png"
+          alt="ACLIS"
+        >
+
       </a>
 
+
       <div class="footer-text">
-        Advanced Collaborative Integrated Solutions<br>
-        Engineering inspired by nature. Solutions built for the future.
+
+        Advanced Collaborative Integrated Solutions
+
+        <br>
+
+        Engineering inspired by nature.
+        Solutions built for the future.
+
       </div>
+
 
     </div>
 
+
     <div class="copyright">
-      © 2026 ACLIS – Advanced Collaborative Integrated Solutions. All rights reserved.
+
+      © 2026 ACLIS – Advanced Collaborative
+      Integrated Solutions. All rights reserved.
+
     </div>
 
   </footer>
 
+
 </body>
+
 </html>
