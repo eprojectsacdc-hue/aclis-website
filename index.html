@@ -558,13 +558,25 @@
        SERVICES
     ===================================================== */
 
-    .services-grid {
-      display: grid;
+ .services-grid {
+  display: grid;
 
-      grid-template-columns: repeat(4, 1fr);
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
 
-      gap: 16px;
-    }
+  gap: 16px;
+
+  width: 100%;
+}
+
+
+.service-card {
+  width: 100%;
+
+  min-width: 0;
+
+  grid-column: auto !important;
+}
 
 
     .service-card {
@@ -1314,6 +1326,31 @@
 
   margin-bottom: 24px;
 }
+
+/* =====================================================
+   SERVICE GRID — FORCE EQUAL COLUMNS
+===================================================== */
+
+.services-grid {
+  display: grid !important;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr)) !important;
+
+  gap: 16px;
+
+  width: 100%;
+}
+
+
+.services-grid .service-card {
+  grid-column: auto !important;
+
+  width: 100%;
+
+  min-width: 0;
+}
+    
   </style>
 
 </head>
