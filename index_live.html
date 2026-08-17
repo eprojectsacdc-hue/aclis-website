@@ -1,0 +1,4896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    ACLIS | Advanced Collaborative Integrated Solutions
+  </title>
+
+  <meta
+    name="description"
+    content="ACLIS – Independent engineering and advisory for power systems, renewable energy, BESS, e-mobility and energy infrastructure."
+  >
+
+  <meta
+    name="theme-color"
+    content="#071525"
+  >
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="./favicon.svg"
+  >
+
+  <!-- =========================================================
+       SUPABASE
+       ========================================================= -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+  <style>
+
+    /* =========================================================
+       ROOT
+       ========================================================= */
+
+    :root {
+
+      --navy: #071525;
+      --navy-2: #0b1d31;
+      --navy-3: #10283e;
+
+      --green: #79bd32;
+      --green-light: #9ad84b;
+      --green-dark: #5b9d20;
+
+      --white: #ffffff;
+
+      --text: #102238;
+      --muted: #637386;
+
+      --light: #f5f7f8;
+
+      --border: rgba(16, 34, 56, 0.10);
+
+      --shadow:
+        0 18px 50px rgba(7, 21, 37, 0.10);
+
+    }
+
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      color: var(--text);
+
+      background: #ffffff;
+
+      line-height: 1.6;
+
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    button,
+    input {
+      font-family: inherit;
+    }
+
+
+    /* =========================================================
+       CONTAINER
+       ========================================================= */
+
+    .container {
+
+      width: min(
+        1400px,
+        calc(100% - 10%)
+      );
+
+      margin: 0 auto;
+
+    }
+
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    header {
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 100;
+
+      padding: 22px 5%;
+
+    }
+
+
+    .nav {
+
+      max-width: 1400px;
+
+      margin: auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+    }
+
+
+    .brand {
+
+      display: block;
+
+      flex-shrink: 0;
+
+    }
+
+
+    .brand img {
+
+      width: 245px;
+
+      max-width: 30vw;
+
+      display: block;
+
+      mix-blend-mode: screen;
+
+    }
+
+
+    .nav-right {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 38px;
+
+    }
+
+
+    .language {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+    }
+
+
+    .language button {
+
+      border: 0;
+
+      background: transparent;
+
+      color: #ffffff;
+
+      cursor: pointer;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      padding: 4px;
+
+      opacity: .7;
+
+    }
+
+
+    .language button.active {
+
+      color: var(--green-light);
+
+      opacity: 1;
+
+    }
+
+
+    nav {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 30px;
+
+    }
+
+
+    nav a {
+
+      color: #ffffff;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      opacity: .92;
+
+      transition: .25s ease;
+
+    }
+
+
+    nav a:hover {
+
+      color: var(--green-light);
+
+    }
+
+
+    .nav-button {
+
+      background: var(--green);
+
+      color: #ffffff;
+
+      padding: 11px 22px;
+
+      border-radius: 7px;
+
+      font-weight: 700;
+
+    }
+
+
+    .nav-button:hover {
+
+      background: var(--green-light);
+
+      color: var(--navy);
+
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+
+      min-height: 720px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+
+        radial-gradient(
+          circle at 78% 45%,
+          rgba(79, 145, 53, .30),
+          transparent 25%
+        ),
+
+        radial-gradient(
+          circle at 90% 80%,
+          rgba(71, 119, 166, .22),
+          transparent 30%
+        ),
+
+        linear-gradient(
+          110deg,
+          #061422 0%,
+          #091b2d 47%,
+          #102e3c 100%
+        );
+
+      display: flex;
+
+      align-items: center;
+
+    }
+
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 850px;
+      height: 850px;
+
+      right: -300px;
+      top: -250px;
+
+      border-radius: 50%;
+
+      background:
+
+        repeating-radial-gradient(
+          circle,
+          transparent 0,
+          transparent 38px,
+          rgba(121, 189, 50, .09) 40px,
+          transparent 42px
+        );
+
+      opacity: .65;
+
+    }
+
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      right: -10%;
+      bottom: -25%;
+
+      width: 75%;
+      height: 65%;
+
+      background:
+
+        linear-gradient(
+          165deg,
+          transparent 35%,
+          rgba(121,189,50,.11) 35.2%,
+          transparent 35.5%
+        ),
+
+        linear-gradient(
+          165deg,
+          transparent 50%,
+          rgba(121,189,50,.07) 50.2%,
+          transparent 50.5%
+        );
+
+      transform: rotate(-3deg);
+
+    }
+
+
+    .hero-content {
+
+      position: relative;
+
+      z-index: 5;
+
+      width: 90%;
+
+      max-width: 1400px;
+
+      margin: 100px auto 0;
+
+    }
+
+
+    .hero-copy {
+
+      max-width: 760px;
+
+    }
+
+
+    .eyebrow {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      color: var(--green-light);
+
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      margin-bottom: 22px;
+
+    }
+
+
+    .eyebrow::before {
+
+      content: "";
+
+      width: 38px;
+
+      height: 2px;
+
+      background: var(--green);
+
+    }
+
+
+    h1 {
+
+      color: #ffffff;
+
+      font-size: clamp(
+        42px,
+        5vw,
+        72px
+      );
+
+      line-height: 1.08;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 22px;
+
+    }
+
+
+    h1 .green {
+
+      color: var(--green-light);
+
+    }
+
+
+    .hero-description {
+
+      color: rgba(
+        255,
+        255,
+        255,
+        .82
+      );
+
+      font-size: 19px;
+
+      max-width: 670px;
+
+      margin-bottom: 16px;
+
+    }
+
+
+    .hero-services {
+
+      color: #ffffff;
+
+      font-size: 16px;
+
+      margin-bottom: 35px;
+
+    }
+
+
+    .hero-services span {
+
+      color: var(--green-light);
+
+      padding: 0 7px;
+
+    }
+
+
+    .buttons {
+
+      display: flex;
+
+      gap: 15px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    .btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 10px;
+
+      padding: 14px 24px;
+
+      border-radius: 7px;
+
+      font-weight: 700;
+
+      border: 0;
+
+      cursor: pointer;
+
+      transition: .25s ease;
+
+    }
+
+
+    .btn-primary {
+
+      background: var(--green);
+
+      color: #ffffff;
+
+    }
+
+
+    .btn-primary:hover {
+
+      background: var(--green-light);
+
+      color: var(--navy);
+
+      transform: translateY(-2px);
+
+    }
+
+
+    .btn-outline {
+
+      border: 1px solid rgba(
+        255,
+        255,
+        255,
+        .75
+      );
+
+      color: #ffffff;
+
+      background: transparent;
+
+    }
+
+
+    .btn-outline:hover {
+
+      background: #ffffff;
+
+      color: var(--navy);
+
+    }
+
+
+    /* =========================================================
+       STATS
+       ========================================================= */
+
+    .stats {
+
+      background:
+        linear-gradient(
+          90deg,
+          #0b2726,
+          #071827 65%
+        );
+
+      color: #ffffff;
+
+    }
+
+
+    .stats-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+    }
+
+
+    .stat {
+
+      min-height: 115px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      padding: 25px;
+
+      border-right:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          .12
+        );
+
+    }
+
+
+    .stat:last-child {
+
+      border-right: 0;
+
+    }
+
+
+    .stat-icon {
+
+      width: 48px;
+
+      height: 48px;
+
+      display: grid;
+
+      place-items: center;
+
+      border:
+        1px solid
+        rgba(
+          131,
+          213,
+          47,
+          .45
+        );
+
+      border-radius: 50%;
+
+      color: var(--green);
+
+      flex-shrink: 0;
+
+    }
+
+
+    .stat-icon svg {
+
+      width: 22px;
+      height: 22px;
+
+      stroke: currentColor;
+
+      fill: none;
+
+      stroke-width: 1.7;
+
+      stroke-linecap: round;
+
+      stroke-linejoin: round;
+
+    }
+
+
+    .stat-number {
+
+      font-size: 28px;
+
+      font-weight: 850;
+
+      line-height: 1;
+
+    }
+
+
+    .stat-label {
+
+      color: #aebdc8;
+
+      font-size: 12px;
+
+      margin-top: 5px;
+
+    }
+
+
+    /* =========================================================
+       GENERAL SECTIONS
+       ========================================================= */
+
+    .section {
+
+      padding: 100px 5%;
+
+    }
+
+
+    .section-label {
+
+      color: var(--green-dark);
+
+      font-size: 12px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      font-weight: 800;
+
+      margin-bottom: 16px;
+
+    }
+
+
+    .section-label::after {
+
+      content: "";
+
+      display: inline-block;
+
+      width: 30px;
+
+      height: 2px;
+
+      background: var(--green);
+
+      margin-left: 10px;
+
+      vertical-align: middle;
+
+    }
+
+
+    h2 {
+
+      font-size: clamp(
+        34px,
+        4vw,
+        52px
+      );
+
+      line-height: 1.12;
+
+      letter-spacing: -1.5px;
+
+      margin-bottom: 25px;
+
+    }
+
+
+    .section-intro {
+
+      color: var(--muted);
+
+      max-width: 700px;
+
+      font-size: 16px;
+
+    }
+
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+
+    .about {
+
+      background: #ffffff;
+
+    }
+
+
+    .about-grid {
+
+      max-width: 1400px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        .8fr 1.2fr;
+
+      gap: 70px;
+
+      align-items: start;
+
+    }
+
+
+    .about-text p {
+
+      color: var(--muted);
+
+      margin-bottom: 18px;
+
+      font-size: 16px;
+
+    }
+
+
+    .about-button {
+
+      display: inline-block;
+
+      margin-top: 15px;
+
+      padding: 14px 25px;
+
+      border-radius: 7px;
+
+      background: var(--navy);
+
+      color: #ffffff;
+
+      font-weight: 700;
+
+      transition: .25s ease;
+
+    }
+
+
+    .about-button:hover {
+
+      background: var(--green);
+
+      transform: translateY(-2px);
+
+    }
+
+
+    /* =========================================================
+       SERVICES
+       ========================================================= */
+
+    .services {
+
+      background: var(--light);
+
+    }
+
+
+    .services-header {
+
+      max-width: 1400px;
+
+      margin: 0 auto 42px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 60px;
+
+      align-items: end;
+
+    }
+
+
+    .services-grid {
+
+      max-width: 1400px;
+
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      gap: 16px;
+
+    }
+
+
+    .service-card {
+
+      width: 100%;
+
+      min-width: 0;
+
+      min-height: 215px;
+
+      padding: 25px 23px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 12px;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 8px 28px
+        rgba(
+          7,
+          21,
+          37,
+          .055
+        );
+
+      transition: .3s ease;
+
+    }
+
+
+    .service-card:hover {
+
+      transform:
+        translateY(-6px);
+
+      box-shadow:
+        var(--shadow);
+
+      border-color:
+        rgba(
+          121,
+          189,
+          50,
+          .35
+        );
+
+    }
+
+
+    .service-icon {
+
+      width: 48px;
+
+      height: 48px;
+
+      border-radius: 12px;
+
+      display: grid;
+
+      place-items: center;
+
+      background:
+        rgba(
+          121,
+          189,
+          50,
+          .10
+        );
+
+      color: #5e9f23;
+
+      margin-bottom: 17px;
+
+    }
+
+
+    .service-icon svg {
+
+      width: 26px;
+      height: 26px;
+
+      stroke: currentColor;
+
+      fill: none;
+
+      stroke-width: 1.7;
+
+      stroke-linecap: round;
+
+      stroke-linejoin: round;
+
+    }
+
+
+    .service-card h3 {
+
+      font-size: 17px;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .service-card p {
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.55;
+
+    }
+
+
+    .coming-soon {
+
+      margin-top: 13px;
+
+      color: var(--green-dark);
+
+      font-size: 10px;
+
+      font-weight: 900;
+
+      letter-spacing: 1.4px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    /* =========================================================
+       SPECIALIST CAPABILITIES
+       ========================================================= */
+
+    .specialties {
+
+      max-width: 1400px;
+
+      margin: 55px auto 0;
+
+      padding-top: 42px;
+
+      border-top:
+        1px solid
+        var(--border);
+
+    }
+
+
+    .specialties-title {
+
+      text-align: center;
+
+      color: var(--text);
+
+      font-size: 13px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      font-weight: 800;
+
+      margin-bottom: 24px;
+
+    }
+
+
+    .specialty-list {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 10px;
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .specialty {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      min-height: 54px;
+
+      padding: 10px 15px;
+
+      border:
+        1px solid
+        #d9e0e6;
+
+      border-radius: 999px;
+
+      color: #2458d7;
+
+      background: #ffffff;
+
+      font-weight: 700;
+
+      font-size: 12px;
+
+      transition: .25s ease;
+
+    }
+
+
+    .specialty:hover {
+
+      border-color:
+        var(--green);
+
+      color: #4f8f20;
+
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+        0 8px 22px
+        rgba(
+          7,
+          21,
+          37,
+          .07
+        );
+
+    }
+
+
+    .specialty svg {
+
+      width: 18px;
+      height: 18px;
+
+      flex:
+        0 0 18px;
+
+      stroke: currentColor;
+
+      fill: none;
+
+      stroke-width: 1.7;
+
+      stroke-linecap: round;
+
+      stroke-linejoin: round;
+
+    }
+
+
+    /* =========================================================
+       CONTACT
+       ========================================================= */
+
+    .contact {
+
+      background: #ffffff;
+
+    }
+
+
+    .contact-grid {
+
+      max-width: 1400px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        .9fr 1.1fr;
+
+      gap: 60px;
+
+      align-items: start;
+
+    }
+
+
+    .contact-card {
+
+      background: var(--light);
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 14px;
+
+      padding: 35px;
+
+    }
+
+
+    .contact-list {
+
+      display: grid;
+
+      gap: 17px;
+
+    }
+
+
+    .contact-row {
+
+      display: grid;
+
+      grid-template-columns:
+        190px 1fr;
+
+      gap: 12px;
+
+      font-size: 14px;
+
+    }
+
+
+    .contact-row strong {
+
+      color: var(--text);
+
+    }
+
+
+    .contact-row a {
+
+      color: var(--muted);
+
+    }
+
+
+    .contact-row a:hover {
+
+      color: var(--green-dark);
+
+    }
+
+
+    #phoneRow {
+
+      display: none;
+
+    }
+
+
+    .protected-phone {
+
+      color:
+        var(--green-dark) !important;
+
+      font-weight: 750;
+
+    }
+
+
+    .protected-message {
+
+      margin-top: 8px;
+
+      padding: 12px 15px;
+
+      background: #eef7e8;
+
+      color: #5b7d3c;
+
+      border-radius: 8px;
+
+      font-size: 12px;
+
+    }
+
+
+    /* =========================================================
+       CLIENT PORTAL
+       ========================================================= */
+
+    .portal {
+
+      background:
+        linear-gradient(
+          115deg,
+          #061522,
+          #0b2135
+        );
+
+      color: #ffffff;
+
+    }
+
+
+    .portal-grid {
+
+      max-width: 1200px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 60px;
+
+      align-items: start;
+
+    }
+
+
+    .portal .section-label {
+
+      color: var(--green-light);
+
+    }
+
+
+    .portal .section-label::after {
+
+      background:
+        var(--green);
+
+    }
+
+
+    .portal h2 {
+
+      color: #ffffff;
+
+    }
+
+
+    .portal-description {
+
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          .72
+        );
+
+      max-width: 580px;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    .portal-note {
+
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          .42
+        );
+
+      font-size: 12px;
+
+    }
+
+
+    .portal-card {
+
+      background: #ffffff;
+
+      color: var(--text);
+
+      border-radius: 15px;
+
+      padding: 32px;
+
+      box-shadow:
+        0 25px 70px
+        rgba(
+          0,
+          0,
+          0,
+          .22
+        );
+
+    }
+
+
+    .portal-card h3 {
+
+      font-size: 24px;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .portal-card > p {
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      margin-bottom: 24px;
+
+    }
+
+
+    /* =========================================================
+       FORMS
+       ========================================================= */
+
+    .form-grid {
+
+      display: grid;
+
+      gap: 14px;
+
+    }
+
+
+    .form-group {
+
+      display: grid;
+
+      gap: 6px;
+
+    }
+
+
+    .form-group label {
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+    }
+
+
+    .form-group input {
+
+      width: 100%;
+
+      height: 46px;
+
+      padding: 0 13px;
+
+      border:
+        1px solid
+        #d4dee5;
+
+      border-radius: 7px;
+
+      outline: none;
+
+      color: var(--text);
+
+      background: #ffffff;
+
+    }
+
+
+    .form-group input:focus {
+
+      border-color:
+        var(--green-dark);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(
+          121,
+          189,
+          50,
+          .12
+        );
+
+    }
+
+
+    .privacy-consent {
+
+      margin-top: 17px;
+
+    }
+
+
+    .privacy-consent label {
+
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 9px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.5;
+
+      cursor: pointer;
+
+    }
+
+
+    .privacy-consent input {
+
+      margin-top: 3px;
+
+      accent-color:
+        var(--green-dark);
+
+      flex-shrink: 0;
+
+    }
+
+
+    .privacy-consent a {
+
+      color:
+        var(--green-dark);
+
+      font-weight: 700;
+
+      text-decoration:
+        underline;
+
+    }
+
+
+    .portal-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 18px;
+
+    }
+
+
+    .btn-secondary {
+
+      background: #edf2f5;
+
+      color: var(--text);
+
+    }
+
+
+    .btn-secondary:hover {
+
+      background: #dfe8ed;
+
+    }
+
+
+    .portal-message {
+
+      display: none;
+
+      margin-top: 16px;
+
+      padding: 12px 14px;
+
+      border-radius: 7px;
+
+      font-size: 12px;
+
+    }
+
+
+    .portal-message.success {
+
+      display: block;
+
+      background: #edf8e7;
+
+      color: #39720f;
+
+    }
+
+
+    .portal-message.error {
+
+      display: block;
+
+      background: #fff0f0;
+
+      color: #a12626;
+
+    }
+
+
+    .portal-message.info {
+
+      display: block;
+
+      background: #edf5ff;
+
+      color: #245a9b;
+
+    }
+
+
+    /* =========================================================
+       CLIENT DASHBOARD
+       ========================================================= */
+
+    #clientDashboard {
+
+      display: none;
+
+    }
+
+
+    #clientDashboard.visible {
+
+      display: block;
+
+    }
+
+
+    .client-welcome {
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    .client-data {
+
+      display: grid;
+
+      gap: 10px;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    .client-data-row {
+
+      display: grid;
+
+      grid-template-columns:
+        120px 1fr;
+
+      gap: 10px;
+
+      padding: 12px 14px;
+
+      border-radius: 8px;
+
+      background: #f4f7f9;
+
+      font-size: 13px;
+
+    }
+
+
+    .client-data-row strong {
+
+      color: var(--text);
+
+    }
+
+
+    /* =========================================================
+       LOGIN MODAL
+       ========================================================= */
+
+    .modal {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 1000;
+
+      display: none;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        rgba(
+          3,
+          12,
+          20,
+          .75
+        );
+
+    }
+
+
+    .modal.open {
+
+      display: flex;
+
+    }
+
+
+    .modal-box {
+
+      width:
+        min(
+          460px,
+          100%
+        );
+
+      background: #ffffff;
+
+      border-radius: 14px;
+
+      padding: 32px;
+
+      position: relative;
+
+      box-shadow:
+        0 30px 90px
+        rgba(
+          0,
+          0,
+          0,
+          .3
+        );
+
+    }
+
+
+    .modal-close {
+
+      position: absolute;
+
+      top: 12px;
+      right: 15px;
+
+      border: 0;
+
+      background:
+        transparent;
+
+      color: #607080;
+
+      font-size: 26px;
+
+      cursor: pointer;
+
+    }
+
+
+    .modal-box h3 {
+
+      font-size: 24px;
+
+      margin-bottom: 7px;
+
+    }
+
+
+    .modal-box > p {
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      margin-bottom: 22px;
+
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+
+      background: #061522;
+
+      color: #ffffff;
+
+      padding:
+        55px 5%
+        25px;
+
+    }
+
+
+    .footer-grid {
+
+      max-width: 1400px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        1.2fr 1fr 1fr;
+
+      gap: 60px;
+
+      padding-bottom: 38px;
+
+      border-bottom:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          .10
+        );
+
+    }
+
+
+    .footer-logo {
+
+      width: 190px;
+
+      margin-bottom: 17px;
+
+    }
+
+
+    .footer-description {
+
+      color: #8195a5;
+
+      max-width: 380px;
+
+      font-size: 13px;
+
+    }
+
+
+    .footer-column h4 {
+
+      font-size: 13px;
+
+      margin-bottom: 15px;
+
+    }
+
+
+    .footer-column a,
+    .footer-column p {
+
+      display: block;
+
+      color: #91a3b1;
+
+      font-size: 13px;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .footer-column a:hover {
+
+      color:
+        var(--green-light);
+
+    }
+
+
+    .footer-bottom {
+
+      max-width: 1400px;
+
+      margin: auto;
+
+      padding-top: 20px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      color: #607483;
+
+      font-size: 10px;
+
+    }
+
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 1100px) {
+
+      .services-grid {
+
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+
+      }
+
+
+      .specialty-list {
+
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+
+      }
+
+
+      .nav-right {
+
+        gap: 20px;
+
+      }
+
+
+      nav {
+
+        gap: 18px;
+
+      }
+
+    }
+
+
+    @media (max-width: 850px) {
+
+      header {
+
+        padding:
+          18px 4%;
+
+      }
+
+
+      .brand img {
+
+        width: 190px;
+
+        max-width: 45vw;
+
+      }
+
+
+      nav {
+
+        display: none;
+
+      }
+
+
+      .hero {
+
+        min-height: 650px;
+
+      }
+
+
+      .hero-content {
+
+        margin-top: 80px;
+
+      }
+
+
+      .stats-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+
+      .stat {
+
+        border-bottom:
+          1px solid
+          rgba(
+            255,
+            255,
+            255,
+            .12
+          );
+
+      }
+
+
+      .about-grid,
+      .contact-grid,
+      .portal-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+      }
+
+
+      .services-header {
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+      }
+
+
+      .footer-grid {
+
+        grid-template-columns:
+          1fr 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .section {
+
+        padding:
+          70px 5%;
+
+      }
+
+
+      .hero {
+
+        min-height: 620px;
+
+      }
+
+
+      .hero-content {
+
+        width: 90%;
+
+        margin-top: 70px;
+
+      }
+
+
+      h1 {
+
+        font-size: 43px;
+
+        letter-spacing:
+          -1.5px;
+
+      }
+
+
+      .hero-description {
+
+        font-size: 16px;
+
+      }
+
+
+      .hero-services {
+
+        font-size: 13px;
+
+        line-height: 2;
+
+      }
+
+
+      .stats-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .stat {
+
+        border-right: 0;
+
+      }
+
+
+      .services-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .specialty-list {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .contact-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 2px;
+
+      }
+
+
+      .portal-card {
+
+        padding: 24px;
+
+      }
+
+
+      .footer-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+      }
+
+
+      .footer-bottom {
+
+        flex-direction: column;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================================
+       HEADER
+       ========================================================= -->
+
+  <header>
+
+    <div class="nav">
+
+
+      <a
+        href="#top"
+        class="brand"
+      >
+
+        <img
+          src="./logo-aclis.png"
+          alt="ACLIS – Advanced Collaborative Integrated Solutions"
+        >
+
+      </a>
+
+
+      <div class="nav-right">
+
+
+        <div class="language">
+
+          <button
+            id="langEN"
+            class="active"
+            type="button"
+            onclick="setLanguage('en')"
+          >
+            EN
+          </button>
+
+          <span style="color:#657785;">
+            /
+          </span>
+
+          <button
+            id="langRO"
+            type="button"
+            onclick="setLanguage('ro')"
+          >
+            RO
+          </button>
+
+        </div>
+
+
+        <nav>
+
+          <a
+            href="#about"
+            data-en="About"
+            data-ro="Despre"
+          >
+            About
+          </a>
+
+          <a
+            href="#services"
+            data-en="Services"
+            data-ro="Servicii"
+          >
+            Services
+          </a>
+
+          <a
+            href="#expertise"
+            data-en="Expertise"
+            data-ro="Expertiză"
+          >
+            Expertise
+          </a>
+
+          <a
+            href="#contact"
+            data-en="Contact"
+            data-ro="Contact"
+          >
+            Contact
+          </a>
+
+          <a
+            href="#portal"
+            class="nav-button"
+            data-en="Client Portal"
+            data-ro="Portal Client"
+          >
+            Client Portal
+          </a>
+
+        </nav>
+
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main id="top">
+
+
+    <!-- =======================================================
+         HERO
+         ======================================================= -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="hero-copy">
+
+
+          <div class="eyebrow">
+            ACLIS
+          </div>
+
+
+          <h1>
+
+            <span
+              data-en="Engineering inspired by nature."
+              data-ro="Inginerie inspirată de natură."
+            >
+              Engineering inspired by nature.
+            </span>
+
+            <br>
+
+            <span
+              class="green"
+              data-en="Solutions built for the future."
+              data-ro="Soluții construite pentru viitor."
+            >
+              Solutions built for the future.
+            </span>
+
+          </h1>
+
+
+          <p
+            class="hero-description"
+            data-en="Independent engineering & advisory for a sustainable energy future."
+            data-ro="Inginerie independentă și consultanță pentru un viitor energetic sustenabil."
+          >
+            Independent engineering & advisory for a sustainable energy future.
+          </p>
+
+
+          <div class="hero-services">
+
+            <span>
+              Power Systems
+            </span>
+
+            <span>
+              Renewable Energy
+            </span>
+
+            <span>
+              BESS
+            </span>
+
+            <span>
+              E-Mobility
+            </span>
+
+          </div>
+
+
+          <div class="buttons">
+
+            <a
+              href="#services"
+              class="btn btn-primary"
+              data-en="Our Services →"
+              data-ro="Serviciile noastre →"
+            >
+              Our Services →
+            </a>
+
+
+            <a
+              href="#contact"
+              class="btn btn-outline"
+              data-en="Contact Us →"
+              data-ro="Contactează-ne →"
+            >
+              Contact Us →
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         STATS
+         ======================================================= -->
+
+    <section
+      class="stats"
+      style="padding:0;"
+    >
+
+      <div class="container stats-grid">
+
+
+        <div class="stat">
+
+          <div class="stat-icon">
+
+            <svg viewBox="0 0 24 24">
+              <circle
+                cx="12"
+                cy="12"
+                r="8"
+              />
+              <path
+                d="M12 7v5l3 2"
+              />
+            </svg>
+
+          </div>
+
+          <div>
+
+            <div class="stat-number">
+              10+
+            </div>
+
+            <div
+              class="stat-label"
+              data-en="Years of Experience"
+              data-ro="Ani de experiență"
+            >
+              Years of Experience
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-icon">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M4 19V9" />
+              <path d="M10 19V5" />
+              <path d="M16 19v-8" />
+              <path d="M22 19V3" />
+            </svg>
+
+          </div>
+
+          <div>
+
+            <div class="stat-number">
+              100+
+            </div>
+
+            <div
+              class="stat-label"
+              data-en="Projects Supported"
+              data-ro="Proiecte susținute"
+            >
+              Projects Supported
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-icon">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M13 2L5 13h6l-1 9 8-12h-6z" />
+            </svg>
+
+          </div>
+
+          <div>
+
+            <div class="stat-number">
+              GW+
+            </div>
+
+            <div
+              class="stat-label"
+              data-en="PV Projects"
+              data-ro="Proiecte PV"
+            >
+              PV Projects
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="stat">
+
+          <div class="stat-icon">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M4 17h16" />
+              <path d="M7 17V7h10v10" />
+              <path d="M10 7V4h4v3" />
+            </svg>
+
+          </div>
+
+          <div>
+
+            <div class="stat-number">
+              LV/MV/HV
+            </div>
+
+            <div
+              class="stat-label"
+              data-en="Electrical Engineering Expertise"
+              data-ro="Expertiză în inginerie electrică"
+            >
+              Electrical Engineering Expertise
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         ABOUT
+         ======================================================= -->
+
+    <section
+      id="about"
+      class="section about"
+    >
+
+      <div class="about-grid">
+
+
+        <div>
+
+          <div
+            class="section-label"
+            data-en="About ACLIS"
+            data-ro="Despre ACLIS"
+          >
+            About ACLIS
+          </div>
+
+
+          <h2
+            data-en="Engineering & Advisory"
+            data-ro="Inginerie & Consultanță"
+          >
+            Engineering & Advisory
+          </h2>
+
+
+          <a
+            href="#expertise"
+            class="about-button"
+            data-en="Explore our expertise →"
+            data-ro="Descoperă expertiza noastră →"
+          >
+            Explore our expertise →
+          </a>
+
+        </div>
+
+
+        <div class="about-text">
+
+          <p
+            data-en="ACLIS is an independent engineering and advisory practice supporting energy infrastructure, renewable energy, battery storage and sustainable mobility projects."
+            data-ro="ACLIS este o companie independentă de inginerie și consultanță care sprijină proiecte de infrastructură energetică, energie regenerabilă, sisteme de stocare a energiei și mobilitate sustenabilă."
+          >
+            ACLIS is an independent engineering and advisory practice supporting energy infrastructure, renewable energy, battery storage and sustainable mobility projects.
+          </p>
+
+
+          <p
+            data-en="We provide technical expertise, engineering support and strategic advisory services to developers, investors, EPC contractors, utilities and asset owners throughout the project lifecycle."
+            data-ro="Oferim expertiză tehnică, suport de inginerie și servicii de consultanță strategică dezvoltatorilor, investitorilor, contractorilor EPC, operatorilor și proprietarilor de active pe întreg ciclul de viață al proiectului."
+          >
+            We provide technical expertise, engineering support and strategic advisory services to developers, investors, EPC contractors, utilities and asset owners throughout the project lifecycle.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         SERVICES
+         ======================================================= -->
+
+    <section
+      id="services"
+      class="section services"
+    >
+
+
+      <div class="services-header">
+
+
+        <div>
+
+          <div
+            class="section-label"
+            data-en="What we do"
+            data-ro="Ce facem"
+          >
+            What we do
+          </div>
+
+
+          <h2
+            data-en="Integrated Engineering Solutions"
+            data-ro="Soluții integrate de inginerie"
+          >
+            Integrated Engineering Solutions
+          </h2>
+
+        </div>
+
+
+        <p
+          class="section-intro"
+          data-en="Independent technical expertise across the energy project lifecycle."
+          data-ro="Expertiză tehnică independentă pe întreg ciclul de viață al proiectelor energetice."
+        >
+          Independent technical expertise across the energy project lifecycle.
+        </p>
+
+
+      </div>
+
+
+      <div class="services-grid">
+
+
+        <!-- POWER SYSTEMS -->
+
+        <article class="service-card">
+
+          <div class="service-icon">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M13 2L5 13h6l-1 9 8-12h-6z" />
+            </svg>
+
+          </div>
+
+
+          <h3
+            data-en="Power Systems"
+            data-ro="Sisteme Electroenergetice"
+          >
+            Power Systems
+          </h3>
+
+
+          <p
+            data-en="Grid connection advisory, substations, power system studies and electrical engineering."
+            data-ro="Consultanță pentru racordare, stații electrice, studii de sistem și inginerie electrică."
+          >
+            Grid connection advisory, substations, power system studies and electrical engineering.
+          </p>
+
+        </article>
+
+
+        <!-- RENEWABLE ENERGY -->
+
+        <article class="service-card">
+
+          <div class="service-icon">
+
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2" />
+              <path d="M12 20v2" />
+              <path d="M4.93 4.93l1.41 1.41" />
+              <path d="M17.66 17.66l1.41 1.41" />
+              <path d="M2 12h2" />
+              <path d="M20 12h2" />
+              <path d="M4.93 19.07l1.41-1.41" />
+              <path d="M17.66 6.34l1.41-1.41" />
+            </svg>
+
+          </div>
+
+
+          <h3
+            data-en="Renewable Energy"
+            data-ro="Energie Regenerabilă"
+          >
+            Renewable Energy
+          </h3>
+
+
+          <p
+            data-en="Solar, wind and hybrid projects from feasibility through detailed engineering."
+            data-ro="Proiecte solare, eoliene și hibride de la fezabilitate până la proiectare detaliată."
+          >
+            Solar, wind and hybrid projects from feasibility through detailed engineering.
+          </p>
+
+        </article>
+
+
+        <!-- BESS -->
+
+        <article class="service-card">
+
+          <div class="service-icon">
+
+            <svg viewBox="0 0 24 24">
+              <rect
+                x="3"
+                y="7"
+                width="17"
+                height="10"
+                rx="2"
+              />
+              <path d="M20 10h2v4h-2" />
+              <path d="M8 12h7" />
+              <path d="M11.5 9.5v5" />
+            </svg>
+
+          </div>
+
+
+          <h3
+            data-en="BESS Solutions"
+            data-ro="Soluții BESS"
+          >
+            BESS Solutions
+          </h3>
+
+
+          <p
+            data-en="Battery energy storage systems engineering, integration and technical advisory."
+            data-ro="Inginerie pentru sisteme de stocare, integrare și consultanță tehnică."
+          >
+            Battery energy storage systems engineering, integration and technical advisory.
+          </p>
+
+        </article>
+
+
+        <!-- E-MOBILITY -->
+
+        <article class="service-card">
+
+          <div class="service-icon">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M5 17h14" />
+              <path d="M6 17l1-6h10l1 6" />
+              <path d="M8 11l2-4h4l2 4" />
+              <circle cx="8" cy="18" r="1.5" />
+              <circle cx="16" cy="18" r="1.5" />
+            </svg>
+
+          </div>
+
+
+          <h3
+            data-en="E-Mobility"
+            data-ro="E-Mobilitate"
+          >
+            E-Mobility
+          </h3>
+
+
+          <p
+            data-en="EV charging infrastructure design and sustainable mobility solutions."
+            data-ro="Proiectarea infrastructurii de încărcare EV și soluții de mobilitate sustenabilă."
+          >
+            EV charging infrastructure design and sustainable mobility solutions.
+          </p>
+
+        </article>
+
+
+        <!-- DUE DILIGENCE -->
+
+        <article class="service-card">
+
+          <div class="service-icon">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M6 3h12v18H6z" />
+              <path d="M9 7h6" />
+              <path d="M9 11h6" />
+              <path d="M9 15h4" />
+            </svg>
+
+          </div>
+
+
+          <h3
+            data-en="Technical Due Diligence"
+            data-ro="Due Diligence Tehnic"
+          >
+            Technical Due Diligence
+          </h3>
+
+
+          <p
+            data-en="Independent technical reviews, risk assessment and bankable engineering reports."
+            data-ro="Analize tehnice independente, evaluarea riscurilor și rapoarte de inginerie pentru finanțare."
+          >
+            Independent technical reviews, risk assessment and bankable engineering reports.
+          </p>
+
+        </article>
+
+
+        <!-- ELECTRICAL DESIGN -->
+
+        <article class="service-card">
+
+          <div class="service-icon">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M4 19h16" />
+              <path d="M6 19V5h12v14" />
+              <path d="M9 8h6" />
+              <path d="M9 12h6" />
+              <path d="M9 16h3" />
+            </svg>
+
+          </div>
+
+
+          <h3
+            data-en="Electrical Design"
+            data-ro="Proiectare Electrică"
+          >
+            Electrical Design
+          </h3>
+
+
+          <p
+            data-en="Detailed LV/MV/HV electrical design for energy infrastructure and renewable plants."
+            data-ro="Proiectare electrică LV/MV/HV pentru infrastructură energetică și centrale regenerabile."
+          >
+            Detailed LV/MV/HV electrical design for energy infrastructure and renewable plants.
+          </p>
+
+        </article>
+
+
+        <!-- AGRIVOLTAIC -->
+
+        <article class="service-card">
+
+          <div class="service-icon">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21V9" />
+              <path d="M12 12c-4 0-6-2-6-5 4 0 6 2 6 5z" />
+              <path d="M12 15c4 0 6-2 6-5-4 0-6 2-6 5z" />
+              <path d="M5 21h14" />
+            </svg>
+
+          </div>
+
+
+          <h3
+            data-en="Agrivoltaic Development"
+            data-ro="Dezvoltare Agrivoltaică"
+          >
+            Agrivoltaic Development
+          </h3>
+
+
+          <p
+            data-en="Innovative agrivoltaic solutions combining sustainable land use and energy production."
+            data-ro="Soluții agrivoltaice inovatoare care combină utilizarea sustenabilă a terenului cu producția de energie."
+          >
+            Innovative agrivoltaic solutions combining sustainable land use and energy production.
+          </p>
+
+        </article>
+
+
+        <!-- TRAINING -->
+
+        <article class="service-card">
+
+          <div class="service-icon">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M4 5h16v11H4z" />
+              <path d="M8 20h8" />
+              <path d="M12 16v4" />
+              <path d="M8 9l2 2 4-4" />
+            </svg>
+
+          </div>
+
+
+          <h3
+            data-en="Knowledge & Training"
+            data-ro="Cunoștințe & Training"
+          >
+            Knowledge & Training
+          </h3>
+
+
+          <p
+            data-en="Technical training, workshops and professional development programs."
+            data-ro="Training tehnic, workshop-uri și programe de dezvoltare profesională."
+          >
+            Technical training, workshops and professional development programs.
+          </p>
+
+
+          <div
+            class="coming-soon"
+            data-en="Coming Soon"
+            data-ro="În curând"
+          >
+            Coming Soon
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+      <!-- =====================================================
+           SPECIALIST CAPABILITIES
+           ===================================================== -->
+
+      <div
+        id="expertise"
+        class="specialties"
+      >
+
+
+        <div
+          class="specialties-title"
+          data-en="Specialist Capabilities"
+          data-ro="Capabilități Specializate"
+        >
+          Specialist Capabilities
+        </div>
+
+
+        <div class="specialty-list">
+
+
+          <div class="specialty">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M4 18h16" />
+              <path d="M6 18V8h12v10" />
+              <path d="M9 8V5h6v3" />
+            </svg>
+
+            <span
+              data-en="Grid Connection Studies"
+              data-ro="Studii de Racordare"
+            >
+              Grid Connection Studies
+            </span>
+
+          </div>
+
+
+          <div class="specialty">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2v20" />
+              <path d="M4 7h16" />
+              <path d="M4 17h16" />
+              <path d="M7 4l5 3 5-3" />
+            </svg>
+
+            <span
+              data-en="Power System Engineering"
+              data-ro="Inginerie Electroenergetică"
+            >
+              Power System Engineering
+            </span>
+
+          </div>
+
+
+          <div class="specialty">
+
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2" />
+              <path d="M12 20v2" />
+              <path d="M2 12h2" />
+              <path d="M20 12h2" />
+            </svg>
+
+            <span
+              data-en="Renewable Energy Projects"
+              data-ro="Proiecte de Energie Regenerabilă"
+            >
+              Renewable Energy Projects
+            </span>
+
+          </div>
+
+
+          <div class="specialty">
+
+            <svg viewBox="0 0 24 24">
+              <rect
+                x="3"
+                y="7"
+                width="17"
+                height="10"
+                rx="2"
+              />
+              <path d="M20 10h2v4h-2" />
+            </svg>
+
+            <span
+              data-en="Battery Energy Storage Systems"
+              data-ro="Sisteme de Stocare BESS"
+            >
+              Battery Energy Storage Systems
+            </span>
+
+          </div>
+
+
+          <div class="specialty">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M4 20h16" />
+              <path d="M6 20V6h12v14" />
+              <path d="M9 9h6" />
+              <path d="M9 13h6" />
+            </svg>
+
+            <span
+              data-en="Electrical Infrastructure"
+              data-ro="Infrastructură Electrică"
+            >
+              Electrical Infrastructure
+            </span>
+
+          </div>
+
+
+          <div class="specialty">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M6 3h12v18H6z" />
+              <path d="M9 7h6" />
+              <path d="M9 11h6" />
+              <path d="M9 15h4" />
+            </svg>
+
+            <span
+              data-en="Technical Due Diligence"
+              data-ro="Due Diligence Tehnic"
+            >
+              Technical Due Diligence
+            </span>
+
+          </div>
+
+
+          <div class="specialty">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21V9" />
+              <path d="M12 12c-4 0-6-2-6-5 4 0 6 2 6 5z" />
+              <path d="M12 15c4 0 6-2 6-5-4 0-6 2-6 5z" />
+            </svg>
+
+            <span
+              data-en="Agrivoltaic Solutions"
+              data-ro="Soluții Agrivoltaice"
+            >
+              Agrivoltaic Solutions
+            </span>
+
+          </div>
+
+
+          <div class="specialty">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M5 17h14" />
+              <path d="M6 17l1-6h10l1 6" />
+              <path d="M8 11l2-4h4l2 4" />
+              <circle cx="8" cy="18" r="1.5" />
+              <circle cx="16" cy="18" r="1.5" />
+            </svg>
+
+            <span
+              data-en="EV Charging Infrastructure"
+              data-ro="Infrastructură de Încărcare EV"
+            >
+              EV Charging Infrastructure
+            </span>
+
+          </div>
+
+
+          <div class="specialty">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M5 19l14-14" />
+              <path d="M10 5h9v9" />
+            </svg>
+
+            <span
+              data-en="Project Development Support"
+              data-ro="Suport Dezvoltare Proiecte"
+            >
+              Project Development Support
+            </span>
+
+          </div>
+
+
+          <div class="specialty">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M4 5h16v14H4z" />
+              <path d="M8 9h8" />
+              <path d="M8 13h5" />
+            </svg>
+
+            <span
+              data-en="Engineering Reviews"
+              data-ro="Verificări de Inginerie"
+            >
+              Engineering Reviews
+            </span>
+
+          </div>
+
+
+          <div class="specialty">
+
+            <svg viewBox="0 0 24 24">
+              <path d="M4 18l5-5 4 4 7-8" />
+              <path d="M15 9h5v5" />
+            </svg>
+
+            <span
+              data-en="Digital Engineering & Automation"
+              data-ro="Inginerie Digitală & Automatizare"
+            >
+              Digital Engineering & Automation
+            </span>
+
+          </div>
+
+
+          <div class="specialty">
+
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="8" />
+              <path d="M12 8v4l3 2" />
+            </svg>
+
+            <span
+              data-en="Research & Innovation"
+              data-ro="Cercetare & Inovare"
+            >
+              Research & Innovation
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =======================================================
+         CONTACT
+         ======================================================= -->
+
+    <section
+      id="contact"
+      class="section contact"
+    >
+
+
+      <div class="contact-grid">
+
+
+        <div>
+
+          <div
+            class="section-label"
+            data-en="Get in touch"
+            data-ro="Contact"
+          >
+            Get in touch
+          </div>
+
+
+          <h2
+            data-en="Let's discuss your project."
+            data-ro="Hai să discutăm despre proiectul tău."
+          >
+            Let's discuss your project.
+          </h2>
+
+
+          <p
+            class="section-intro"
+            data-en="For project enquiries, technical advisory and engineering support, contact ACLIS."
+            data-ro="Pentru proiecte, consultanță tehnică și suport de inginerie, contactează ACLIS."
+          >
+            For project enquiries, technical advisory and engineering support, contact ACLIS.
+          </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+
+          <div class="contact-list">
+
+
+            <div class="contact-row">
+
+              <strong
+                data-en="General Contact"
+                data-ro="Contact General"
+              >
+                General Contact
+              </strong>
+
+              <a href="mailto:contact@aclis.ro">
+                contact@aclis.ro
+              </a>
+
+            </div>
+
+
+            <div class="contact-row">
+
+              <strong
+                data-en="European Contact"
+                data-ro="Contact European"
+              >
+                European Contact
+              </strong>
+
+              <a href="mailto:contact@aclis.eu">
+                contact@aclis.eu
+              </a>
+
+            </div>
+
+
+            <div class="contact-row">
+
+              <strong
+                data-en="Business & Proposals"
+                data-ro="Business & Propuneri"
+              >
+                Business & Proposals
+              </strong>
+
+              <a href="mailto:office@aclis.ro">
+                office@aclis.ro
+              </a>
+
+            </div>
+
+
+            <div class="contact-row">
+
+              <strong
+                data-en="Location"
+                data-ro="Locație"
+              >
+                Location
+              </strong>
+
+              <span>
+                Romania
+              </span>
+
+            </div>
+
+
+            <!-- PROTECTED PHONE -->
+
+            <div
+              class="contact-row"
+              id="phoneRow"
+            >
+
+              <strong
+                data-en="Phone"
+                data-ro="Telefon"
+              >
+                Phone
+              </strong>
+
+              <a
+                id="phoneValue"
+                class="protected-phone"
+                href="#"
+              >
+              </a>
+
+            </div>
+
+
+            <div
+              id="phoneProtectedMessage"
+              class="protected-message"
+              data-en="Phone available to registered clients."
+              data-ro="Telefon disponibil clienților înregistrați."
+            >
+              Phone available to registered clients.
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CLIENT PORTAL
+         ======================================================= -->
+
+    <section
+      id="portal"
+      class="section portal"
+    >
+
+
+      <div class="portal-grid">
+
+
+        <div>
+
+          <div
+            class="section-label"
+            data-en="ACLIS Client Portal"
+            data-ro="Portal Client ACLIS"
+          >
+            ACLIS Client Portal
+          </div>
+
+
+          <h2
+            data-en="Private contact access."
+            data-ro="Acces privat la datele de contact."
+          >
+            Private contact access.
+          </h2>
+
+
+          <p
+            class="portal-description"
+            data-en="Register as an ACLIS client to access protected contact information and future client services."
+            data-ro="Înregistrează-te ca și client ACLIS pentru a accesa datele de contact protejate și viitoarele servicii dedicate clienților."
+          >
+            Register as an ACLIS client to access protected contact information and future client services.
+          </p>
+
+
+          <p
+            class="portal-note"
+            data-en="Your information is securely stored and processed for the operation of your ACLIS client account."
+            data-ro="Datele tale sunt stocate și prelucrate în condiții de securitate pentru administrarea contului de client ACLIS."
+          >
+            Your information is securely stored and processed for the operation of your ACLIS client account.
+          </p>
+
+        </div>
+
+
+        <div class="portal-card">
+
+
+          <!-- =================================================
+               REGISTRATION PANEL
+               ================================================= -->
+
+          <div id="registrationPanel">
+
+
+            <h3
+              data-en="Client Registration"
+              data-ro="Înregistrare Client"
+            >
+              Client Registration
+            </h3>
+
+
+            <p
+              data-en="Register using your professional email. A secure sign-in link will be sent to you."
+              data-ro="Înregistrează-te folosind adresa ta profesională de email. Vei primi un link securizat de autentificare."
+            >
+              Register using your professional email. A secure sign-in link will be sent to you.
+            </p>
+
+
+            <form id="registrationForm">
+
+
+              <div class="form-grid">
+
+
+                <div class="form-group">
+
+                  <label
+                    for="fullName"
+                    data-en="Full name *"
+                    data-ro="Nume complet *"
+                  >
+                    Full name *
+                  </label>
+
+                  <input
+                    id="fullName"
+                    type="text"
+                    required
+                    autocomplete="name"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label
+                    for="company"
+                    data-en="Company"
+                    data-ro="Companie"
+                  >
+                    Company
+                  </label>
+
+                  <input
+                    id="company"
+                    type="text"
+                    autocomplete="organization"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label
+                    for="email"
+                    data-en="Professional email *"
+                    data-ro="Email profesional *"
+                  >
+                    Professional email *
+                  </label>
+
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    autocomplete="email"
+                  >
+
+                </div>
+
+
+              </div>
+
+
+              <!-- GDPR -->
+
+              <div class="privacy-consent">
+
+                <label>
+
+                  <input
+                    type="checkbox"
+                    id="privacyConsent"
+                    required
+                  >
+
+                  <span>
+
+                    <span
+                      data-en="I have read and acknowledge the "
+                      data-ro="Am citit și am luat la cunoștință "
+                    >
+                      I have read and acknowledge the
+                    </span>
+
+                    <a
+                      href="./privacy-policy.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+
+                      <span
+                        data-en="Privacy Policy"
+                        data-ro="Politica de confidențialitate"
+                      >
+                        Privacy Policy
+                      </span>
+
+                    </a>.
+
+                  </span>
+
+                </label>
+
+              </div>
+
+
+              <div class="portal-actions">
+
+
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  id="registerButton"
+                  data-en="Register →"
+                  data-ro="Înregistrează-te →"
+                >
+                  Register →
+                </button>
+
+
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="openLogin()"
+                  data-en="Already registered?"
+                  data-ro="Ești deja înregistrat?"
+                >
+                  Already registered?
+                </button>
+
+
+              </div>
+
+
+            </form>
+
+
+            <div
+              id="registrationMessage"
+              class="portal-message"
+            >
+            </div>
+
+
+          </div>
+
+
+          <!-- =================================================
+               CLIENT DASHBOARD
+               ================================================= -->
+
+          <div id="clientDashboard">
+
+
+            <h3
+              data-en="Welcome to ACLIS"
+              data-ro="Bine ai venit la ACLIS"
+            >
+              Welcome to ACLIS
+            </h3>
+
+
+            <p
+              id="welcomeText"
+              class="client-welcome"
+            >
+            </p>
+
+
+            <div class="client-data">
+
+
+              <div class="client-data-row">
+
+                <strong
+                  data-en="Company"
+                  data-ro="Companie"
+                >
+                  Company
+                </strong>
+
+                <span id="clientCompany">
+                  —
+                </span>
+
+              </div>
+
+
+              <div class="client-data-row">
+
+                <strong
+                  data-en="Email"
+                  data-ro="Email"
+                >
+                  Email
+                </strong>
+
+                <span id="clientEmail">
+                  —
+                </span>
+
+              </div>
+
+
+              <div class="client-data-row">
+
+                <strong
+                  data-en="ACLIS Phone"
+                  data-ro="Telefon ACLIS"
+                >
+                  ACLIS Phone
+                </strong>
+
+                <a
+                  id="dashboardPhone"
+                  href="#"
+                  class="protected-phone"
+                >
+                  —
+                </a>
+
+              </div>
+
+
+            </div>
+
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="logout()"
+              data-en="Sign out"
+              data-ro="Deconectare"
+            >
+              Sign out
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =========================================================
+       LOGIN MODAL
+       ========================================================= -->
+
+  <div
+    id="loginModal"
+    class="modal"
+  >
+
+
+    <div class="modal-box">
+
+
+      <button
+        type="button"
+        class="modal-close"
+        onclick="closeLogin()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+
+      <h3
+        data-en="Client Login"
+        data-ro="Autentificare Client"
+      >
+        Client Login
+      </h3>
+
+
+      <p
+        data-en="Enter your registered email and we will send you a secure sign-in link."
+        data-ro="Introdu emailul cu care te-ai înregistrat și îți vom trimite un link securizat de autentificare."
+      >
+        Enter your registered email and we will send you a secure sign-in link.
+      </p>
+
+
+      <form id="loginForm">
+
+
+        <div class="form-group">
+
+          <label
+            for="loginEmail"
+            data-en="Professional email"
+            data-ro="Email profesional"
+          >
+            Professional email
+          </label>
+
+          <input
+            id="loginEmail"
+            type="email"
+            required
+            autocomplete="email"
+          >
+
+        </div>
+
+
+        <div class="portal-actions">
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            data-en="Send Login Link →"
+            data-ro="Trimite linkul →"
+          >
+            Send Login Link →
+          </button>
+
+        </div>
+
+
+      </form>
+
+
+      <div
+        id="loginMessage"
+        class="portal-message"
+      >
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+
+  <footer>
+
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <img
+          src="./logo-aclis.png"
+          alt="ACLIS"
+          class="footer-logo"
+        >
+
+
+        <p
+          class="footer-description"
+          data-en="Engineering inspired by nature. Solutions built for the future."
+          data-ro="Inginerie inspirată de natură. Soluții construite pentru viitor."
+        >
+          Engineering inspired by nature. Solutions built for the future.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4
+          data-en="Navigation"
+          data-ro="Navigare"
+        >
+          Navigation
+        </h4>
+
+
+        <a
+          href="#about"
+          data-en="About"
+          data-ro="Despre"
+        >
+          About
+        </a>
+
+
+        <a
+          href="#services"
+          data-en="Services"
+          data-ro="Servicii"
+        >
+          Services
+        </a>
+
+
+        <a
+          href="#expertise"
+          data-en="Expertise"
+          data-ro="Expertiză"
+        >
+          Expertise
+        </a>
+
+
+        <a
+          href="#contact"
+          data-en="Contact"
+          data-ro="Contact"
+        >
+          Contact
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4
+          data-en="Contact"
+          data-ro="Contact"
+        >
+          Contact
+        </h4>
+
+
+        <a href="mailto:contact@aclis.ro">
+          contact@aclis.ro
+        </a>
+
+
+        <a href="mailto:contact@aclis.eu">
+          contact@aclis.eu
+        </a>
+
+
+        <a href="mailto:office@aclis.ro">
+          office@aclis.ro
+        </a>
+
+
+        <a
+          href="./privacy-policy.html"
+          data-en="Privacy Policy"
+          data-ro="Politica de confidențialitate"
+        >
+          Privacy Policy
+        </a>
+
+
+        <p>
+          Romania
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 ACLIS – Advanced Collaborative Integrated Solutions.
+      </span>
+
+
+      <span
+        data-en="Engineering inspired by nature."
+        data-ro="Inginerie inspirată de natură."
+      >
+        Engineering inspired by nature.
+      </span>
+
+    </div>
+
+
+  </footer>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+
+  <script>
+
+
+    /* =========================================================
+       SUPABASE CONFIGURATION
+       ========================================================= */
+
+    const SUPABASE_URL =
+      "https://ympojarcxrrzwngsblxs.supabase.co";
+
+
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_4lhj-p0Fb5iFkSSrmD92pg_F_WEk7tr";
+
+
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
+
+
+    /* =========================================================
+       LANGUAGE
+       ========================================================= */
+
+    let currentLanguage =
+      localStorage.getItem(
+        "aclis-language"
+      ) || "en";
+
+
+    function setLanguage(language) {
+
+      currentLanguage =
+        language;
+
+
+      localStorage.setItem(
+        "aclis-language",
+        language
+      );
+
+
+      document.documentElement.lang =
+        language;
+
+
+      document
+        .querySelectorAll(
+          "[data-en]"
+        )
+        .forEach(
+          element => {
+
+            const text =
+              element.getAttribute(
+                `data-${language}`
+              );
+
+
+            if (
+              text !== null
+            ) {
+
+              element.textContent =
+                text;
+
+            }
+
+          }
+        );
+
+
+      document
+        .getElementById("langEN")
+        .classList.toggle(
+          "active",
+          language === "en"
+        );
+
+
+      document
+        .getElementById("langRO")
+        .classList.toggle(
+          "active",
+          language === "ro"
+        );
+
+    }
+
+
+    /* =========================================================
+       MESSAGE HELPER
+       ========================================================= */
+
+    function showMessage(
+      elementId,
+      message,
+      type
+    ) {
+
+      const element =
+        document.getElementById(
+          elementId
+        );
+
+
+      element.className =
+        `portal-message ${type}`;
+
+
+      element.textContent =
+        message;
+
+    }
+
+
+    /* =========================================================
+       LOGIN MODAL
+       ========================================================= */
+
+    function openLogin() {
+
+      document
+        .getElementById(
+          "loginModal"
+        )
+        .classList.add(
+          "open"
+        );
+
+    }
+
+
+    function closeLogin() {
+
+      document
+        .getElementById(
+          "loginModal"
+        )
+        .classList.remove(
+          "open"
+        );
+
+    }
+
+
+    document
+      .getElementById(
+        "loginModal"
+      )
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target === this
+          ) {
+
+            closeLogin();
+
+          }
+
+        }
+      );
+
+
+    /* =========================================================
+       REGISTRATION
+       ========================================================= */
+
+    document
+      .getElementById(
+        "registrationForm"
+      )
+      .addEventListener(
+        "submit",
+        async function(event) {
+
+          event.preventDefault();
+
+
+          const fullName =
+            document
+              .getElementById(
+                "fullName"
+              )
+              .value
+              .trim();
+
+
+          const company =
+            document
+              .getElementById(
+                "company"
+              )
+              .value
+              .trim();
+
+
+          const email =
+            document
+              .getElementById(
+                "email"
+              )
+              .value
+              .trim();
+
+
+          const privacyConsent =
+            document
+              .getElementById(
+                "privacyConsent"
+              )
+              .checked;
+
+
+          if (
+            !fullName ||
+            !email
+          ) {
+
+            showMessage(
+              "registrationMessage",
+
+              currentLanguage === "ro"
+                ? "Completează câmpurile obligatorii."
+                : "Please complete the required fields.",
+
+              "error"
+            );
+
+            return;
+
+          }
+
+
+          if (
+            !privacyConsent
+          ) {
+
+            showMessage(
+              "registrationMessage",
+
+              currentLanguage === "ro"
+                ? "Trebuie să citești și să confirmi Politica de confidențialitate."
+                : "Please read and acknowledge the Privacy Policy.",
+
+              "error"
+            );
+
+            return;
+
+          }
+
+
+          const button =
+            document.getElementById(
+              "registerButton"
+            );
+
+
+          button.disabled =
+            true;
+
+
+          button.textContent =
+            currentLanguage === "ro"
+              ? "Se procesează..."
+              : "Processing...";
+
+
+          try {
+
+
+            const redirectUrl =
+              window.location.origin +
+              window.location.pathname;
+
+
+            /*
+             * Passwordless registration.
+             *
+             * Supabase creates the user when appropriate,
+             * and the database trigger creates the profile.
+             */
+
+            const {
+              error
+            } =
+              await supabaseClient
+                .auth
+                .signInWithOtp({
+
+                  email: email,
+
+                  options: {
+
+                    shouldCreateUser:
+                      true,
+
+                    emailRedirectTo:
+                      redirectUrl,
+
+                    data: {
+
+                      full_name:
+                        fullName,
+
+                      company:
+                        company
+
+                    }
+
+                  }
+
+                });
+
+
+            if (error) {
+
+              throw error;
+
+            }
+
+
+            showMessage(
+
+              "registrationMessage",
+
+              currentLanguage === "ro"
+
+                ? "Am trimis un link securizat pe adresa ta de email. Verifică inbox-ul și accesează linkul pentru a finaliza autentificarea."
+
+                : "A secure sign-in link has been sent to your email. Check your inbox and use the link to complete authentication.",
+
+              "success"
+
+            );
+
+
+            document
+              .getElementById(
+                "registrationForm"
+              )
+              .reset();
+
+
+          }
+
+          catch (error) {
+
+            console.error(
+              "Registration error:",
+              error
+            );
+
+
+            showMessage(
+
+              "registrationMessage",
+
+              error.message ||
+              (
+                currentLanguage === "ro"
+                  ? "Înregistrarea nu a putut fi finalizată."
+                  : "Registration could not be completed."
+              ),
+
+              "error"
+
+            );
+
+          }
+
+
+          finally {
+
+            button.disabled =
+              false;
+
+
+            button.textContent =
+              currentLanguage === "ro"
+                ? "Înregistrează-te →"
+                : "Register →";
+
+          }
+
+        }
+      );
+
+
+    /* =========================================================
+       LOGIN
+       ========================================================= */
+
+    document
+      .getElementById(
+        "loginForm"
+      )
+      .addEventListener(
+        "submit",
+        async function(event) {
+
+          event.preventDefault();
+
+
+          const email =
+            document
+              .getElementById(
+                "loginEmail"
+              )
+              .value
+              .trim();
+
+
+          if (!email) {
+
+            return;
+
+          }
+
+
+          try {
+
+
+            const redirectUrl =
+              window.location.origin +
+              window.location.pathname;
+
+
+            const {
+              error
+            } =
+              await supabaseClient
+                .auth
+                .signInWithOtp({
+
+                  email: email,
+
+                  options: {
+
+                    shouldCreateUser:
+                      false,
+
+                    emailRedirectTo:
+                      redirectUrl
+
+                  }
+
+                });
+
+
+            if (error) {
+
+              throw error;
+
+            }
+
+
+            showMessage(
+
+              "loginMessage",
+
+              currentLanguage === "ro"
+
+                ? "Linkul securizat de autentificare a fost trimis pe email."
+
+                : "The secure sign-in link has been sent to your email.",
+
+              "success"
+
+            );
+
+
+          }
+
+          catch (error) {
+
+            console.error(
+              "Login error:",
+              error
+            );
+
+
+            showMessage(
+
+              "loginMessage",
+
+              error.message ||
+              (
+                currentLanguage === "ro"
+                  ? "Autentificarea nu a putut fi inițiată."
+                  : "Login could not be initiated."
+              ),
+
+              "error"
+
+            );
+
+          }
+
+        }
+      );
+
+
+    /* =========================================================
+       LOAD PROTECTED CONTACT
+       ========================================================= */
+
+    async function loadProtectedContact() {
+
+
+      const {
+        data: {
+          session
+        }
+      } =
+        await supabaseClient
+          .auth
+          .getSession();
+
+
+      if (!session) {
+
+        hideProtectedContact();
+
+        return;
+
+      }
+
+
+      try {
+
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient
+            .from(
+              "aclis_contact"
+            )
+            .select(
+              "phone"
+            )
+            .eq(
+              "id",
+              1
+            )
+            .single();
+
+
+        if (error) {
+
+          console.error(
+            "Contact loading error:",
+            error
+          );
+
+          hideProtectedContact();
+
+          return;
+
+        }
+
+
+        if (
+          data &&
+          data.phone
+        ) {
+
+          showProtectedPhone(
+            data.phone
+          );
+
+        }
+
+      }
+
+      catch (error) {
+
+        console.error(
+          error
+        );
+
+        hideProtectedContact();
+
+      }
+
+    }
+
+
+    /* =========================================================
+       SHOW PROTECTED PHONE
+       ========================================================= */
+
+    function showProtectedPhone(
+      phone
+    ) {
+
+
+      const phoneRow =
+        document.getElementById(
+          "phoneRow"
+        );
+
+
+      const phoneValue =
+        document.getElementById(
+          "phoneValue"
+        );
+
+
+      const dashboardPhone =
+        document.getElementById(
+          "dashboardPhone"
+        );
+
+
+      const protectedMessage =
+        document.getElementById(
+          "phoneProtectedMessage"
+        );
+
+
+      phoneValue.textContent =
+        phone;
+
+
+      phoneValue.href =
+        `tel:${phone}`;
+
+
+      if (
+        dashboardPhone
+      ) {
+
+        dashboardPhone.textContent =
+          phone;
+
+        dashboardPhone.href =
+          `tel:${phone}`;
+
+      }
+
+
+      phoneRow.style.display =
+        "grid";
+
+
+      protectedMessage.style.display =
+        "none";
+
+    }
+
+
+    /* =========================================================
+       HIDE PROTECTED PHONE
+       ========================================================= */
+
+    function hideProtectedContact() {
+
+
+      const phoneRow =
+        document.getElementById(
+          "phoneRow"
+        );
+
+
+      const protectedMessage =
+        document.getElementById(
+          "phoneProtectedMessage"
+        );
+
+
+      phoneRow.style.display =
+        "none";
+
+
+      protectedMessage.style.display =
+        "block";
+
+
+      const dashboardPhone =
+        document.getElementById(
+          "dashboardPhone"
+        );
+
+
+      if (
+        dashboardPhone
+      ) {
+
+        dashboardPhone.textContent =
+          "—";
+
+        dashboardPhone.removeAttribute(
+          "href"
+        );
+
+      }
+
+    }
+
+
+    /* =========================================================
+       LOAD CLIENT PROFILE
+       ========================================================= */
+
+    async function loadClientProfile() {
+
+
+      const {
+        data: {
+          session
+        }
+      } =
+        await supabaseClient
+          .auth
+          .getSession();
+
+
+      if (!session) {
+
+        showRegistrationPanel();
+
+        return;
+
+      }
+
+
+      try {
+
+
+        const user =
+          session.user;
+
+
+        const {
+          data: profile,
+          error
+        } =
+          await supabaseClient
+            .from(
+              "profiles"
+            )
+            .select(
+              "full_name,company,email"
+            )
+            .eq(
+              "id",
+              user.id
+            )
+            .single();
+
+
+        if (error) {
+
+          console.error(
+            "Profile loading error:",
+            error
+          );
+
+          /*
+           * If the profile trigger has not completed yet,
+           * wait briefly and retry.
+           */
+
+          setTimeout(
+            loadClientProfile,
+            800
+          );
+
+          return;
+
+        }
+
+
+        document
+          .getElementById(
+            "registrationPanel"
+          )
+          .style.display =
+          "none";
+
+
+        document
+          .getElementById(
+            "clientDashboard"
+          )
+          .classList.add(
+            "visible"
+          );
+
+
+        document
+          .getElementById(
+            "welcomeText"
+          )
+          .textContent =
+
+          currentLanguage === "ro"
+
+            ? `Bine ai venit, ${profile.full_name || ""}.`
+
+            : `Welcome, ${profile.full_name || ""}.`;
+
+
+        document
+          .getElementById(
+            "clientCompany"
+          )
+          .textContent =
+          profile.company ||
+          "—";
+
+
+        document
+          .getElementById(
+            "clientEmail"
+          )
+          .textContent =
+          profile.email ||
+          user.email ||
+          "—";
+
+
+        await loadProtectedContact();
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "Client profile error:",
+          error
+        );
+
+      }
+
+    }
+
+
+    /* =========================================================
+       SHOW REGISTRATION PANEL
+       ========================================================= */
+
+    function showRegistrationPanel() {
+
+
+      document
+        .getElementById(
+          "registrationPanel"
+        )
+        .style.display =
+        "block";
+
+
+      document
+        .getElementById(
+          "clientDashboard"
+        )
+        .classList.remove(
+          "visible"
+        );
+
+    }
+
+
+    /* =========================================================
+       LOGOUT
+       ========================================================= */
+
+    async function logout() {
+
+
+      await supabaseClient
+        .auth
+        .signOut();
+
+
+      showRegistrationPanel();
+
+
+      hideProtectedContact();
+
+
+      window.location.hash =
+        "portal";
+
+    }
+
+
+    /* =========================================================
+       AUTH STATE LISTENER
+       ========================================================= */
+
+    supabaseClient
+      .auth
+      .onAuthStateChange(
+        async function(
+          event,
+          session
+        ) {
+
+
+          if (session) {
+
+            /*
+             * Delay slightly so the database trigger
+             * has time to create the profile.
+             */
+
+            setTimeout(
+              async function() {
+
+                await loadClientProfile();
+
+                await loadProtectedContact();
+
+              },
+              300
+            );
+
+          }
+
+          else {
+
+            showRegistrationPanel();
+
+            hideProtectedContact();
+
+          }
+
+        }
+      );
+
+
+    /* =========================================================
+       INITIALIZATION
+       ========================================================= */
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      async function() {
+
+
+        setLanguage(
+          currentLanguage
+        );
+
+
+        await loadClientProfile();
+
+
+        await loadProtectedContact();
+
+      }
+    );
+
+
+  </script>
+
+
+</body>
+
+</html>
