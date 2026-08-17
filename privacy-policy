@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Politica de confidențialitate – ACLIS</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #f6f8f7;
+      color: #10253a;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+      line-height: 1.7;
+    }
+
+    .page {
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 60px 0 80px;
+    }
+
+    .logo {
+      width: 210px;
+      margin-bottom: 45px;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 24px;
+    }
+
+    p,
+    li {
+      color: #566b7c;
+      font-size: 15px;
+    }
+
+    strong {
+      color: #10253a;
+    }
+
+    a {
+      color: #5da91c;
+    }
+
+    .updated {
+      color: #7b8c99;
+      font-size: 13px;
+      margin-bottom: 35px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 11px 18px;
+      background: #83d52f;
+      color: #071827;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<main class="page">
+
+  <img
+    src="logo-aclis.png"
+    alt="ACLIS"
+    class="logo"
+  >
+
+  <h1>Politica de confidențialitate</h1>
+
+  <p class="updated">
+    Ultima actualizare: 17 august 2026
+  </p>
+
+
+  <h2>1. Operatorul datelor</h2>
+
+  <p>
+    Operatorul datelor cu caracter personal prelucrate prin intermediul
+    acestui website este entitatea ACLIS care operează serviciile și
+    website-ul ACLIS.
+  </p>
+
+  <p>
+    Pentru informații privind protecția datelor ne puteți contacta la:
+    <a href="mailto:contact@aclis.ro">contact@aclis.ro</a>.
+  </p>
+
+
+  <h2>2. Ce date colectăm</h2>
+
+  <p>
+    În cadrul portalului de clienți ACLIS putem colecta următoarele date:
+  </p>
+
+  <ul>
+    <li>nume și prenume;</li>
+    <li>denumirea companiei;</li>
+    <li>adresa de e-mail profesională;</li>
+    <li>date tehnice necesare autentificării și securității contului;</li>
+    <li>data creării și actualizării contului.</li>
+  </ul>
+
+  <p>
+    ACLIS nu solicită prin formularul standard de înregistrare CNP,
+    serie și număr de carte de identitate, date privind sănătatea,
+    date biometrice sau alte categorii speciale de date.
+  </p>
+
+
+  <h2>3. Scopurile prelucrării</h2>
+
+  <p>
+    Datele sunt prelucrate, după caz, pentru:
+  </p>
+
+  <ul>
+    <li>crearea și administrarea contului de client;</li>
+    <li>autentificarea utilizatorului;</li>
+    <li>furnizarea accesului la informații și servicii destinate clienților;</li>
+    <li>comunicarea cu utilizatorul în legătură cu contul său;</li>
+    <li>securitatea și prevenirea utilizării neautorizate a portalului;</li>
+    <li>îndeplinirea obligațiilor legale aplicabile.</li>
+  </ul>
+
+
+  <h2>4. Temeiul juridic</h2>
+
+  <p>
+    Prelucrarea datelor se realizează numai în baza unui temei juridic
+    aplicabil conform art. 6 din Regulamentul (UE) 2016/679 (GDPR).
+  </p>
+
+  <p>
+    În funcție de scopul concret, temeiul poate fi reprezentat de
+    necesitatea de a face demersuri la solicitarea persoanei înainte
+    de încheierea unui contract, executarea unui contract, îndeplinirea
+    unei obligații legale sau interesul legitim al operatorului, atunci
+    când sunt îndeplinite condițiile legale.
+  </p>
+
+  <p>
+    Atunci când prelucrarea se bazează pe consimțământ, acesta va fi
+    solicitat separat și poate fi retras în orice moment.
+  </p>
+
+
+  <h2>5. Stocarea datelor</h2>
+
+  <p>
+    Datele asociate contului de client sunt stocate într-o infrastructură
+    de servicii cloud utilizată pentru autentificare și administrarea
+    bazei de date a portalului ACLIS.
+  </p>
+
+  <p>
+    Datele sunt păstrate atât timp cât este necesar pentru scopurile
+    pentru care au fost colectate, pentru administrarea contului și,
+    după caz, pentru îndeplinirea obligațiilor legale sau apărarea
+    drepturilor și intereselor legitime ale operatorului.
+  </p>
+
+
+  <h2>6. Securitatea datelor</h2>
+
+  <p>
+    ACLIS aplică măsuri tehnice și organizatorice adecvate pentru
+    protejarea datelor împotriva accesului neautorizat, pierderii,
+    distrugerii sau utilizării ilegale.
+  </p>
+
+  <p>
+    Accesul la informațiile protejate din portal este controlat prin
+    autentificare și politici de acces la nivelul bazei de date.
+  </p>
+
+
+  <h2>7. Destinatarii datelor</h2>
+
+  <p>
+    Datele pot fi accesibile operatorului și furnizorilor de servicii
+    tehnice utilizați pentru funcționarea website-ului, autentificare,
+    stocarea datelor și mentenanța infrastructurii IT, în limitele
+    necesare furnizării serviciilor.
+  </p>
+
+
+  <h2>8. Transferuri internaționale</h2>
+
+  <p>
+    În cazul în care furnizorii utilizați de ACLIS implică prelucrarea
+    datelor în afara Spațiului Economic European, ACLIS va aplica
+    mecanismele de transfer prevăzute de GDPR și va furniza informațiile
+    relevante privind garanțiile aplicabile.
+  </p>
+
+
+  <h2>9. Drepturile dumneavoastră</h2>
+
+  <p>
+    În condițiile GDPR, persoana vizată poate avea următoarele drepturi:
+  </p>
+
+  <ul>
+    <li>dreptul de acces la date;</li>
+    <li>dreptul la rectificarea datelor inexacte;</li>
+    <li>dreptul la ștergerea datelor, în condițiile legii;</li>
+    <li>dreptul la restricționarea prelucrării;</li>
+    <li>dreptul la opoziție, în cazurile prevăzute de GDPR;</li>
+    <li>dreptul la portabilitatea datelor, în condițiile aplicabile;</li>
+    <li>dreptul de a retrage consimțământul atunci când prelucrarea se bazează pe consimțământ;</li>
+    <li>dreptul de a depune o plângere la autoritatea de supraveghere competentă.</li>
+  </ul>
+
+
+  <h2>10. Exercitarea drepturilor</h2>
+
+  <p>
+    Pentru solicitări privind datele dumneavoastră personale ne puteți
+    contacta la:
+  </p>
+
+  <p>
+    <strong>
+      <a href="mailto:contact@aclis.ro">
+        contact@aclis.ro
+      </a>
+    </strong>
+  </p>
+
+
+  <h2>11. Autoritatea de supraveghere</h2>
+
+  <p>
+    În România, autoritatea competentă în domeniul protecției datelor
+    este Autoritatea Națională de Supraveghere a Prelucrării Datelor cu
+    Caracter Personal (ANSPDCP).
+  </p>
+
+  <p>
+    Website:
+    <a
+      href="https://www.dataprotection.ro/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      www.dataprotection.ro
+    </a>
+  </p>
+
+
+  <h2>12. Modificarea politicii</h2>
+
+  <p>
+    ACLIS poate actualiza periodic această Politică de confidențialitate
+    pentru a reflecta modificările legislative, tehnice sau operaționale.
+    Versiunea actuală va fi disponibilă pe acest website.
+  </p>
+
+
+  <a
+    href="index.html"
+    class="back"
+  >
+    ← Înapoi la ACLIS
+  </a>
+
+</main>
+
+</body>
+</html>
