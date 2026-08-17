@@ -292,9 +292,9 @@
       border-color: var(--green);
     }
 
-    [data-lang="en"] {
-      display: none;
-    }
+ [hidden] {
+    display: none !important;
+}
 
     @media (max-width: 700px) {
       .header-inner {
@@ -1602,55 +1602,53 @@
        LANGUAGE SCRIPT
   ========================================================== -->
 
-  <script>
+ <script>
+function setLanguage(language) {
+    document.documentElement.lang = language;
 
-    function setLanguage(language) {
-
-      document.documentElement.lang = language;
-
-      document.querySelectorAll('[data-lang]').forEach(function(element) {
-
-        element.style.display =
-          element.getAttribute('data-lang') === language
-            ? ''
-            : 'none';
-
-      });
-
-      document.getElementById('roBtn')
-        .classList.toggle('active', language === 'ro');
-
-      document.getElementById('enBtn')
-        .classList.toggle('active', language === 'en');
-
-      try {
-        localStorage.setItem('aclis-language', language);
-      } catch (e) {
-        // Ignore localStorage errors.
-      }
-    }
-
-
-    document.addEventListener('DOMContentLoaded', function() {
-
-      let language = 'ro';
-
-      try {
-        const savedLanguage =
-          localStorage.getItem('aclis-language');
-
-        if (savedLanguage === 'ro' || savedLanguage === 'en') {
-          language = savedLanguage;
+    document.querySelectorAll('[data-lang]').forEach(function (element) {
+        if (element.getAttribute('data-lang') === language) {
+            element.hidden = false;
+        } else {
+            element.hidden = true;
         }
-      } catch (e) {
-        // Default to Romanian.
-      }
-
-      setLanguage(language);
-
     });
 
-  </script>
+    const roBtn = document.getElementById('roBtn');
+    const enBtn = document.getElementById('enBtn');
+
+    if (roBtn) {
+        roBtn.classList.toggle('active', language === 'ro');
+    }
+
+    if (enBtn) {
+        enBtn.classList.toggle('active', language === 'en');
+    }
+
+    try {
+        localStorage.setItem('aclis-language', language);
+    } catch (error) {
+        // localStorage may be unavailable; ignore.
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    let language = 'ro';
+
+    try {
+        const savedLanguage = localStorage.getItem('aclis-language');
+
+        if (savedLanguage === 'ro' || savedLanguage === 'en') {
+            language = savedLanguage;
+        }
+    } catch (error) {
+        // Keep Romanian as default.
+    }
+
+    setLanguage(language);
+});
+</script>
 
 </body>
 </html>
